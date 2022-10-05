@@ -8,8 +8,13 @@ namespace Spotify_Clone
 {
     internal class Playlist : SongCollection
     {
-        public Playlist(List<Song> songs, string title) : base(songs, title)
+        public Person Owner;
+
+        public Playlist(Person person) : base(person)
+        {
+            Owner = person;
+        }
         {
         }
-    }
+}
 }

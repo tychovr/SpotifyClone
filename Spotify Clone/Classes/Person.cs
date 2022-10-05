@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace Spotify_Clone
 {
-    internal class User
+    internal class Person
     {
-        public User(List<User> friendList, string name)
+        public string Name;
+        private List<Person> Friends;
+        private List<Playlist> Playlists;
+        public Person()
         {
         }
     }

@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Spotify_Clone
 {
-    internal interface IMenu
+    internal interface IPlayable
     {
+        void Show();
+
+        void Play();
+
+        void Pause();
+
+        void Skip();
     }
 }
