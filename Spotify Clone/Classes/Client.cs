@@ -21,5 +21,109 @@ namespace Spotify_Clone
         public Client(List<Person> person, List<Album> album, List<Song> song)
         {
         }
+
+        public void SetActiveUser(Person person)
+        {
+        }
+
+        public void ShowAllAlbums()
+        {
+        }
+
+        public void SelectAlbum(int id)
+        {
+        }
+
+        public void ShowAllSongs()
+        {
+        }
+
+        public void SelectSong(int id)
+        {
+        }
+
+        public void ShowAllUsers()
+        {
+        }
+
+        public void SelectUser(int id)
+        {
+        }
+
+        public void ShowUserPlaylists()
+        {
+        }
+
+        public void SelectUserPlaylist(int id)
+        {
+        }
+
+        public void Play()
+        {
+        }
+
+        public void Pause()
+        {
+        }
+
+        public void Stop()
+        {
+        }
+
+        public void NextSong()
+        {
+        }
+
+        public void SetShuffle()
+        {
+        }
+
+        public void SetRepeat()
+        {
+        }
+
+        public void CreatePlaylist(string name)
+        {
+        }
+
+        public void ShowPlaylists()
+        {
+        }
+
+        public void SelectPlaylist(int id)
+        {
+        }
+
+        public void RemovePlaylists(int id)
+        {
+        }
+
+        public void AddSongToPlaylist(int id)
+        {
+        }
+
+        public void ShowSongsInPlaylist()
+        {
+        }
+
+        public void RemoveFromPlaylist(int id)
+        {
+        }
+
+        public void ShowFriends()
+        {
+        }
+
+        public void SelectFriend(int id)
+        {
+        }
+
+        public void AddFriend(int id)
+        {
+        }
+
+        public void RemoveFriend(int id)
+        {
+        }
     }
 }

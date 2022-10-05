@@ -12,9 +12,22 @@ namespace Spotify_Clone
         private List<Album> Albums;
         private List<Song> Songs;
 
-        public Artist(List<Album> album)
+        public Artist(List<Album> album, string name)
         {
             Albums = album;
+        }
+
+        public void AddSong(Song song)
+        {
+        }
+
+        public void AddAlbum(Album album)
+        {
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
         }
     }
 }

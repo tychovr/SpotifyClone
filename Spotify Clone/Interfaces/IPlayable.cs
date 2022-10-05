@@ -8,12 +8,10 @@ namespace Spotify_Clone
 {
     internal interface IPlayable
     {
-        void Show();
-
         void Play();
-
         void Pause();
-
-        void Skip();
+        void Next();
+        void Stop();
+        int Length();
     }
 }

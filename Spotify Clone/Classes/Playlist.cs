@@ -10,11 +10,22 @@ namespace Spotify_Clone
     {
         public Person Owner;
 
-        public Playlist(Person person) : base(person)
+        public Playlist(Person person, string title)
         {
             Owner = person;
         }
+
+        public void Add(IPlayable playable)
         {
         }
-}
+
+        public void Remove(IPlayable playable)
+        {
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+    }
 }

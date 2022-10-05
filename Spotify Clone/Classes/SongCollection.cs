@@ -11,9 +11,19 @@ namespace Spotify_Clone
         public string Title;
         private List<IPlayable> Playables;
 
-        public SongCollection()
+        public SongCollection(string title)
         {
 
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
+        public List<IPlayable> ShowPlayables()
+        {
+            return Playables;
         }
     }
 }

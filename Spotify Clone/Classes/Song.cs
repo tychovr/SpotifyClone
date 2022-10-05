@@ -13,7 +13,7 @@ namespace Spotify_Clone
         public Genres SongGenre;
         public int Duration;
 
-        public Song(List<Artist> artist, Genres genre)
+        public Song(List<Artist> artist, Genres genre, int songID)
         {
 
         }
@@ -55,5 +55,9 @@ namespace Spotify_Clone
             Other
         }
 
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }

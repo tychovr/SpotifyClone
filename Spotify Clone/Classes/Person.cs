@@ -11,8 +11,30 @@ namespace Spotify_Clone
         public string Name;
         private List<Person> Friends;
         private List<Playlist> Playlists;
-        public Person()
+
+        public Person(string name)
         {
+            Name = name;
+        }
+
+        public List<Person> ShowFriends()
+        {
+            return Friends;
+        }
+
+        public List<Playlist> ShowPlaylists()
+        {
+            return Playlists;
+        }
+
+        public Playlist SelectPlaylist(int id)
+        {
+            return Playlists[id];
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
         }
     }
 }

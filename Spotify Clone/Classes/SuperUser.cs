@@ -18,5 +18,29 @@ namespace Spotify_Clone
             AllSongs = song;
             AllUsers = person;
         }
+
+        public void AddFriend(Person person)
+        {
+        }
+
+        public void RemoveFriend(Person person)
+        {
+        }
+
+        public Playlist CreatePlayList(string name)
+        {
+        }
+
+        public void RemovePlayList(int id)
+        {
+        }
+
+        public void AddToPlayList(IPlayable playable)
+        {
+        }
+
+        public void RemoveFromPlayList(IPlayable playable)
+        {
+        }
     }
 }
