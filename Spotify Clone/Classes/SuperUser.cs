@@ -21,6 +21,7 @@ namespace Spotify_Clone
 
         public void AddFriend(Person person)
         {
+
         }
 
         public void RemoveFriend(Person person)

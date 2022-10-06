@@ -8,13 +8,21 @@ namespace Spotify_Clone
 {
     internal class Song : IPlayable
     {
-        public string Title;
-        public List<Artist> Artists;
-        public Genre SongGenre;
-        public int Duration;
+        private string title;
+        private List<Artist> artists;
+        private Genre songGenre;
 
-        public Song(List<Artist> artist, Genre genre, int songID)
+        public string Title { get { return title; } set { title = value; } }
+        public List<Artist> Artists { get { return artists; } set { artists = value; } }
+        public Genre SongGenre { get { return songGenre; } set { songGenre = value; } }
+
+        private int Duration;
+
+        public Song(List<Artist> artist, Genre genre, int songID, int duration)
         {
+            Artists = artist;
+            SongGenre = genre;
+            Duration = duration;
         }
 
         public int Length()

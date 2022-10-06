@@ -19,17 +19,17 @@ namespace Spotify_Clone
 
         public List<Person> ShowFriends()
         {
-            return Friends;
+            throw new NotSupportedException();
         }
 
         public List<Playlist> ShowPlaylists()
         {
-            return Playlists;
+            throw new NotSupportedException();
         }
 
         public Playlist SelectPlaylist(int id)
         {
-            return Playlists[id];
+            throw new NotSupportedException();
         }
 
         public override string ToString()
