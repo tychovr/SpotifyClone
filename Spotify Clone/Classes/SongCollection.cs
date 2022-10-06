@@ -28,27 +28,32 @@ namespace Spotify_Clone
 
         public void Play()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Playing: " + Title);
         }
 
         public void Pause()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Pausing: " + Title);
         }
 
         public void Next()
         {
-            throw new NotImplementedException();
+            Play();
         }
 
         public void Stop()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Stopped playing: " + Title);
         }
 
         public int Length()
         {
-            throw new NotImplementedException();
+            int length = 0;
+            foreach (IPlayable playable in Playables)
+            {
+                length += playable.Length();
+            }
+            return length;
         }
     }
 }
