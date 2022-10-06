@@ -8,7 +8,9 @@ namespace Spotify_Clone
 {
     internal class Album : SongCollection
     {
-        private List<Artist> Artists = null;
+        private List<Artist> Artists;
+        private List<Song> Songs;
+        private List<Album> Albums;
 
         public Album(List<Artist> artist, string title, List<Song> song) : base(title)
         {
@@ -16,10 +18,12 @@ namespace Spotify_Clone
 
         public void AddSong(Song song)
         {
+            Songs.Add(song);
         }
 
         public void AddAlbum(Album album)
         {
+            Albums.Add(album);
         }
 
         public override string ToString()
