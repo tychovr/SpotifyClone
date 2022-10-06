@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Spotify_Clone
 {
-    internal class Song
+    internal class Song : IPlayable
     {
         public string Title;
         public List<Artist> Artists;
@@ -15,7 +15,31 @@ namespace Spotify_Clone
 
         public Song(List<Artist> artist, Genre genre, int songID)
         {
+        }
 
+        public int Length()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Next()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Pause()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Play()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Stop()
+        {
+            throw new NotImplementedException();
         }
 
         public override string ToString()
