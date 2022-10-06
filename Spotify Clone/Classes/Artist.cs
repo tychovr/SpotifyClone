@@ -19,10 +19,12 @@ namespace Spotify_Clone
 
         public void AddSong(Song song)
         {
+            Songs.Add(song);
         }
 
         public void AddAlbum(Album album)
         {
+            Albums.Add(album);
         }
 
         public override string ToString()
