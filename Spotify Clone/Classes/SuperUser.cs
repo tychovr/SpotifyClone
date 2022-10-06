@@ -12,7 +12,7 @@ namespace Spotify_Clone
         private List<Song> AllSongs;
         private List<Person> AllUsers;
 
-        public SuperUser(List<Person> friendList, string name, List<Album> album, List<Song> song, List<Person> person) : base(friendList, name)
+        public SuperUser(List<Person> friendList, string name, List<Album> album, List<Song> song, List<Person> person) : base(name)
         {
             AllAlbums = album;
             AllSongs = song;
@@ -29,6 +29,7 @@ namespace Spotify_Clone
 
         public Playlist CreatePlayList(string name)
         {
+            return null;
         }
 
         public void RemovePlayList(int id)

@@ -8,9 +8,9 @@ namespace Spotify_Clone
 {
     internal class Album : SongCollection
     {
-        private List<Artist> Artists;
+        private List<Artist> Artists = null;
 
-        public Album(List<Artist> artist, string title, List<Song> song)
+        public Album(List<Artist> artist, string title, List<Song> song) : base(title)
         {
         }
 

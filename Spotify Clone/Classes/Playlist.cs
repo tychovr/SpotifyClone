@@ -10,7 +10,7 @@ namespace Spotify_Clone
     {
         public Person Owner;
 
-        public Playlist(Person person, string title)
+        public Playlist(Person person, string title) : base(title)
         {
             Owner = person;
         }

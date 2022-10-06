@@ -10,49 +10,12 @@ namespace Spotify_Clone
     {
         public string Title;
         public List<Artist> Artists;
-        public Genres SongGenre;
+        public Genre SongGenre;
         public int Duration;
 
-        public Song(List<Artist> artist, Genres genre, int songID)
+        public Song(List<Artist> artist, Genre genre, int songID)
         {
 
-        }
-
-        public enum Genres
-        {
-            Rock,
-            Pop,
-            HipHop,
-            Country,
-            Jazz,
-            Classical,
-            Blues,
-            Metal,
-            Electronic,
-            Folk,
-            Reggae,
-            RnB,
-            Soul,
-            Punk,
-            Indie,
-            Alternative,
-            World,
-            Latin,
-            Reggaeton,
-            Salsa,
-            KPop,
-            JPop,
-            Anime,
-            Soundtrack,
-            Musical,
-            Childrens,
-            Comedy,
-            SpokenWord,
-            Audiobook,
-            Podcast,
-            Radio,
-            Dance,
-            Other
         }
 
         public override string ToString()
