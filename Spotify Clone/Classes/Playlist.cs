@@ -22,6 +22,7 @@ namespace Spotify_Clone
 
         public void Remove(IPlayable playable)
         {
+            Playables.Remove(playable);
         }
 
         public override string ToString()
