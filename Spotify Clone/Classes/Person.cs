@@ -9,8 +9,11 @@ namespace Spotify_Clone
     internal class Person
     {
         public string Name;
-        private List<Person> Friends;
-        private List<Playlist> Playlists;
+        private List<Person> friends;
+        private List<Playlist> playlists;
+
+        public List<Playlist> Playlists { get => playlists; set => playlists = value; }
+        public List<Person> Friends { get => friends; set => friends = value; }
 
         public Person(string name)
         {
@@ -19,22 +22,20 @@ namespace Spotify_Clone
 
         public List<Person> ShowFriends()
         {
-            throw new NotSupportedException();
+            return Friends;
         }
 
         public List<Playlist> ShowPlaylists()
         {
-            throw new NotSupportedException();
         }
 
         public Playlist SelectPlaylist(int id)
         {
-            throw new NotSupportedException();
         }
 
         public override string ToString()
         {
-            return base.ToString();
+            return Name;
         }
     }
 }
