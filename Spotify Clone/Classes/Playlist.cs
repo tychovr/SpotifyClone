@@ -17,6 +17,7 @@ namespace Spotify_Clone
 
         public void Add(IPlayable playable)
         {
+            Playables.Add(playable);
         }
 
         public void Remove(IPlayable playable)
@@ -25,7 +26,7 @@ namespace Spotify_Clone
 
         public override string ToString()
         {
-            return base.ToString();
+            return Owner.Name;
         }
     }
 }
