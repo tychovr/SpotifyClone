@@ -27,10 +27,12 @@ namespace Spotify_Clone
 
         public List<Playlist> ShowPlaylists()
         {
+            return Playlists;
         }
 
         public Playlist SelectPlaylist(int id)
         {
+            return Playlists[id];
         }
 
         public override string ToString()

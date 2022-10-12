@@ -13,10 +13,12 @@ namespace Spotify_Clone
         public bool Playing;
         public bool Shuffle;
         public bool Repeat;
-        private SuperUser ActiveUser;
-        private List<Album> AllAlbums;
-        private List<Song> AllSongs;
-        private List<Person> AllUsers;
+        private SuperUser activeUser;
+        private List<Album> allAlbums;
+        private List<Song> allSongs;
+        private List<Person> allUsers;
+
+        public SuperUser ActiveUser { get => activeUser; set => activeUser = value; }
 
         public Client(List<Person> person, List<Album> album, List<Song> song)
         {
@@ -24,6 +26,7 @@ namespace Spotify_Clone
 
         public void SetActiveUser(Person person)
         {
+            activeUser = (SuperUser)person;
         }
 
         public void ShowAllAlbums()
@@ -88,6 +91,7 @@ namespace Spotify_Clone
 
         public void ShowPlaylists()
         {
+            SuperUser.Playlists.ForEach(playlist => Console.WriteLine(playlist));
         }
 
         public void SelectPlaylist(int id)
@@ -100,6 +104,7 @@ namespace Spotify_Clone
 
         public void AddSongToPlaylist(int id)
         {
+
         }
 
         public void ShowSongsInPlaylist()
@@ -112,6 +117,7 @@ namespace Spotify_Clone
 
         public void ShowFriends()
         {
+            SuperUser.Friends.ForEach(friend => Console.WriteLine(friend));
         }
 
         public void SelectFriend(int id)
