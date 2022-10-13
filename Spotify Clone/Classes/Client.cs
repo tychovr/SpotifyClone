@@ -81,6 +81,14 @@ namespace Spotify_Clone
 
         public void SetShuffle()
         {
+            if (Shuffle == true)
+            {
+                Shuffle = false;
+            }
+            else
+            {
+                Shuffle = true;
+            }
         }
 
         public void SetRepeat()
