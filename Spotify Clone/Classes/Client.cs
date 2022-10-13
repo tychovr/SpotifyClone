@@ -63,6 +63,7 @@ namespace Spotify_Clone
 
         public void Play()
         {
+
         }
 
         public void Pause()
@@ -119,7 +120,7 @@ namespace Spotify_Clone
 
         public void ShowFriends()
         {
-            SuperUser.Friends.ForEach(friend => Console.WriteLine(friend));
+            activeUser.Friends.ForEach(friend => Console.WriteLine(friend));
         }
 
         public void SelectFriend(int id)
@@ -128,6 +129,7 @@ namespace Spotify_Clone
 
         public void AddFriend(int id)
         {
+            activeUser.AddFriend(allUsers[id]);
         }
 
         public void RemoveFriend(int id)

@@ -21,7 +21,7 @@ namespace Spotify_Clone
 
         public void AddFriend(Person person)
         {
-
+            Friends.Add(person);
         }
 
         public void RemoveFriend(Person person)
