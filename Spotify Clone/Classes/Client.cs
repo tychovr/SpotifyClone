@@ -134,6 +134,7 @@ namespace Spotify_Clone
 
         public void RemoveFriend(int id)
         {
+            activeUser.RemoveFriend(allUsers[id]);
         }
     }
 }
