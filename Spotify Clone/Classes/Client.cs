@@ -11,6 +11,7 @@ namespace Spotify_Clone
     {
         public IPlayable CurrentlyPlaying;
         public int CurrentTime;
+        public int SelectedId;
         public bool Playing;
         public bool Shuffle;
         public bool Repeat;
@@ -52,14 +53,31 @@ namespace Spotify_Clone
 
         public void SelectUser(int id)
         {
+
         }
 
         public void ShowUserPlaylists()
         {
+            int i = 0;
+
+            var table = new Table();
+            table.Border = TableBorder.Rounded;
+
+            table.AddColumn("ID");
+            table.AddColumn("Playlist Title");
+            table.AddColumn("Creator");
+
+            for (i = 0; i < allUsers[SelectedId].Playlists.Count; i++)
+            {
+                table.AddRow(i.ToString(), allUsers[SelectedId].Playlists[i].Title, allUsers[SelectedId].Name);
+            }
+
+            AnsiConsole.Write(table);
         }
 
         public void SelectUserPlaylist(int id)
         {
+
         }
 
         public void Play()
