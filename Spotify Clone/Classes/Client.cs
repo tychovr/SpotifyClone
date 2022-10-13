@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Spectre.Console;
 
 namespace Spotify_Clone
 {
@@ -93,7 +94,20 @@ namespace Spotify_Clone
 
         public void ShowPlaylists()
         {
-            activeUser.Playlists.ForEach(playlist => Console.WriteLine(playlist));
+            int i = 0;
+
+            var table = new Table();
+
+            table.AddColumn("ID");
+            table.AddColumn("Playlist Title");
+            table.AddColumn("Creator");
+
+            for (i = 0; i < activeUser.Playlists.Count; i++)
+            {
+                table.AddRow(i.ToString(), activeUser.Playlists[i].Title, activeUser.Name);
+            }
+
+            AnsiConsole.Write(table);
         }
 
         public void SelectPlaylist(int id)
