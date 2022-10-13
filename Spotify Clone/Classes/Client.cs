@@ -91,7 +91,7 @@ namespace Spotify_Clone
 
         public void ShowPlaylists()
         {
-            SuperUser.Playlists.ForEach(playlist => Console.WriteLine(playlist));
+            activeUser.Playlists.ForEach(playlist => Console.WriteLine(playlist));
         }
 
         public void SelectPlaylist(int id)
@@ -100,6 +100,7 @@ namespace Spotify_Clone
 
         public void RemovePlaylists(int id)
         {
+            activeUser.RemovePlayList(id);
         }
 
         public void AddSongToPlaylist(int id)

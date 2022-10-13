@@ -27,7 +27,7 @@ namespace Spotify_Clone
 
         public int Length()
         {
-            throw new NotImplementedException();
+
         }
 
         public void Next()
