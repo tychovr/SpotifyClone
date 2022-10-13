@@ -87,6 +87,7 @@ namespace Spotify_Clone
 
         public void CreatePlaylist(string name)
         {
+            activeUser.CreatePlayList(name);
         }
 
         public void ShowPlaylists()

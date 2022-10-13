@@ -28,9 +28,10 @@ namespace Spotify_Clone
         {
         }
 
-        public Playlist CreatePlayList(string name)
+        public void CreatePlayList(string name)
         {
-            return null;
+            Playlist playlist = new Playlist(this, name);
+            Playlists.Add(playlist);
         }
 
         public void RemovePlayList(int id)
