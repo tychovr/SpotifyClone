@@ -97,6 +97,7 @@ namespace Spotify_Clone
             int i = 0;
 
             var table = new Table();
+            table.Border = TableBorder.Rounded;
 
             table.AddColumn("ID");
             table.AddColumn("Playlist Title");
