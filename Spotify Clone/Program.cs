@@ -158,6 +158,47 @@
             albumArtificalIntoxication.AddSong(sideFxs);
             albumTheFirstDose.AddSong(dieGladiator);
             albumTheFirstDose.AddSong(outtaControl);
+
+
+            // Create new Playlist classes
+            Playlist playlistZwareResonantie = new Playlist(tycho, "Zware Resonantie");
+            Playlist playlistAlt = new Playlist(luuk, "Alt");
+            Playlist playlistBTS = new Playlist(kyara, "BTS");
+            Playlist playlistRaveVibes = new Playlist(fabian, "Rave Vibes");
+
+            // Add songs to playlists
+            playlistZwareResonantie.Add(darkestHourTheClock);
+            playlistZwareResonantie.Add(theSolution);
+            playlistZwareResonantie.Add(dieGladiator);
+            playlistZwareResonantie.Add(outtaControl);
+            playlistAlt.Add(rennaisanceOfRave);
+            playlistAlt.Add(tripToMarsAstronauts);
+            playlistAlt.Add(edgeOfTheUnknown);
+            playlistAlt.Add(byTheSword);
+            playlistBTS.Add(rescueMe);
+            playlistBTS.Add(noOneCanStopUsNow);
+            playlistBTS.Add(aI);
+            playlistBTS.Add(sideFxs);
+            playlistRaveVibes.Add(darkestHourTheClock);
+            playlistRaveVibes.Add(theSolution);
+            playlistRaveVibes.Add(rennaisanceOfRave);
+            playlistRaveVibes.Add(tripToMarsAstronauts);
+
+            // Add playlists to users
+            tycho.Playlists.Add(playlistZwareResonantie);
+            luuk.Playlists.Add(playlistAlt);
+            kyara.Playlists.Add(playlistBTS);
+            fabian.Playlists.Add(playlistRaveVibes);
+
+            // Add friends to users
+            tycho.Friends.Add(kyara);
+            tycho.Friends.Add(fabian);
+            luuk.Friends.Add(kyara);
+            luuk.Friends.Add(fabian);
+            kyara.Friends.Add(tycho);
+            kyara.Friends.Add(luuk);
+            fabian.Friends.Add(tycho);
+            fabian.Friends.Add(luuk);
         }
     }
 }
