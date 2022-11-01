@@ -60,6 +60,7 @@ namespace Spotify_Clone
 
         public void SelectSong(int id)
         {
+            Song SelectedSong = allSongs[id];
         }
 
         public void ShowAllUsers()
