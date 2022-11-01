@@ -9,8 +9,8 @@ namespace Spotify_Clone
     internal class Artist
     {
         public string Name;
-        private List<Album> Albums;
-        private List<Song> Songs;
+        private List<Album> Albums = new List<Album>();
+        private List<Song> Songs = new List<Song>();
 
         public Artist(List<Album> album, string name)
         {
