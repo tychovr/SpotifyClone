@@ -8,9 +8,9 @@ namespace Spotify_Clone
 {
     internal class SuperUser : Person
     {
-        private List<Album> AllAlbums;
-        private List<Song> AllSongs;
-        private List<Person> AllUsers;
+        private List<Album> AllAlbums = new List<Album>();
+        private List<Song> AllSongs = new List<Song>();
+        private List<Person> AllUsers = new List<Person>();
 
         public SuperUser(List<Person> friendList, string name, List<Album> album, List<Song> song, List<Person> person) : base(name)
         {
