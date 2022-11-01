@@ -9,8 +9,8 @@ namespace Spotify_Clone
     internal class Person
     {
         public string Name;
-        private List<Person> friends;
-        private List<Playlist> playlists;
+        private List<Person> friends = new List<Person>();
+        private List<Playlist> playlists = new List<Playlist>();
 
         public List<Playlist> Playlists { get => playlists; set => playlists = value; }
         public List<Person> Friends { get => friends; set => friends = value; }
