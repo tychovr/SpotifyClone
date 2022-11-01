@@ -23,9 +23,12 @@ namespace Spotify_Clone
 
         public SuperUser ActiveUser { get => activeUser; set => activeUser = value; }
 
-        public Client(SuperUser person)
+        public Client(SuperUser superUser)
         {
-            activeUser = person;
+            activeUser = superUser;
+            allAlbums = superUser.AllAlbums;
+            allSongs = superUser.AllSongs;
+            allUsers = superUser.AllUsers;
         }
 
         public Client(List<Person> person, List<Album> album, List<Song> song)
@@ -39,13 +42,20 @@ namespace Spotify_Clone
 
         public void ShowAllAlbums()
         {
-            int Counter = 0;
+            int Counter = 1;
 
-            foreach (Album album in allAlbums)
+            var Table = new Table().Centered();
+            Table.Title("[#42d660][bold]All albums:[/][/]");
+            Table.Border(TableBorder.HeavyEdge);
+            Table.AddColumns("[#FF0000]ID[/]", "[#FF7F00]Title[/]", "[#FFFF00]Artist[/]", "[#00FF00]Songs[/]");
+
+            foreach (var album in allAlbums)
             {
+                Table.AddRow("[#FF0000]" + Counter.ToString() + "[/]", "[#FF7F00]" + album.Title + "[/]", "[#FFFF00]" + album.Artists[0].Name + "[/]", "[#00FF00]" + album.Songs.Count.ToString() + "[/]");
                 Counter++;
-                AnsiConsole.MarkupLine($"[green]{Counter}[/] - [yellow]{album.Title}[/]");
             }
+
+            AnsiConsole.Render(Table);
         }
 
         public void SelectAlbum(int id)
