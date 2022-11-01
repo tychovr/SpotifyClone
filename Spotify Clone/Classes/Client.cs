@@ -100,7 +100,7 @@ namespace Spotify_Clone
 
         public void SetShuffle()
         {
-
+            Shuffle = !Shuffle;
         }
 
         public void SetRepeat()
