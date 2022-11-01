@@ -18,8 +18,9 @@ namespace Spotify_Clone
         public Genre SongGenre { get { return songGenre; } set { songGenre = value; } }
         public int Duration { get { return duration; } set { duration = value; } }
 
-        public Song(List<Artist> artist, Genre genre, int songID, int duration)
+        public Song(string title, List<Artist> artist, Genre genre, int songID, int duration)
         {
+            Title = title;
             Artists = artist;
             SongGenre = genre;
             Duration = duration;
