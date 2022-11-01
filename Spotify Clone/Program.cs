@@ -328,11 +328,15 @@ namespace Spotify_Clone
         // Explains every test in a cool and fast effect
         public static void TypeWriter(string text)
         {
+            Console.SetCursorPosition(5, 5);
+
             for (int i = 0; i < text.Length; i++)
             {
                 Console.Write(text[i]);
                 Thread.Sleep(50);
             }
+
+            Console.CursorTop = Console.CursorTop + 3;
         }
     }
 }
