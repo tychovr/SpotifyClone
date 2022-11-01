@@ -201,8 +201,8 @@
             fabian.Friends.Add(luuk);
 
             // Activate hardcoded test
-            CodeTest codeTest = new CodeTest();
-            codeTest.Test();
+            TestCode testCode = new TestCode();
+            testCode.StartTest();
         }
     }
 }
