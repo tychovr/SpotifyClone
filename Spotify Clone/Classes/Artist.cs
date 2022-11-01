@@ -15,6 +15,7 @@ namespace Spotify_Clone
         public Artist(List<Album> album, string name)
         {
             Albums = album;
+            Name = name;
         }
 
         public void AddSong(Song song)
