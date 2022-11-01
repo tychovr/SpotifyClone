@@ -43,10 +43,12 @@ namespace Spotify_Clone
 
         public void Play()
         {
+            Console.WriteLine("Playing: " + Title);
         }
 
         public void Stop()
         {
+            Console.WriteLine("Stopped playing: " + Title);
         }
 
         public override string ToString()
