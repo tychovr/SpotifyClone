@@ -15,6 +15,10 @@ namespace Spotify_Clone
         public List<Playlist> Playlists { get => playlists; set => playlists = value; }
         public List<Person> Friends { get => friends; set => friends = value; }
 
+        public Person()
+        {
+        }
+
         public Person(string name)
         {
             Name = name;
