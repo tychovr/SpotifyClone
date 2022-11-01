@@ -313,5 +313,15 @@ namespace Spotify_Clone
             client.ShowAllSongs();
             client.ShowAllUsers();
         }
+
+        // Explains every test in a cool and fast effect
+        public static void TypeWriter(string text)
+        {
+            for (int i = 0; i < text.Length; i++)
+            {
+                Console.Write(text[i]);
+                Thread.Sleep(50);
+            }
+        }
     }
 }
