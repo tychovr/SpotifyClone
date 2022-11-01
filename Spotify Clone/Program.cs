@@ -301,7 +301,6 @@ namespace Spotify_Clone
                     task2.Increment(1);
                     Thread.Sleep(100);
                 }
-                Thread.Sleep(50);
             });
         }
     }
