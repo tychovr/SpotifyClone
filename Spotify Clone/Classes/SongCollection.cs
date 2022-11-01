@@ -20,7 +20,7 @@ namespace Spotify_Clone
 
         public override string ToString()
         {
-            return base.ToString();
+            return Title;
         }
 
         public List<IPlayable> ShowPlayables()
