@@ -65,13 +65,19 @@ namespace Spotify_Clone
 
         public void ShowAllSongs()
         {
-            int Counter = 0;
+            int Counter = 1;
 
-            foreach (Song song in allSongs)
+            var Table = new Table().Centered();
+            Table.Title("[#42d660][bold]All songs:[/][/]");
+            Table.Border(TableBorder.HeavyEdge);
+            Table.AddColumns("[#FF0000]ID[/]", "[#FF7F00]Title[/]", "[#FFFF00]Artists[/]", "[#00FF00]Genre[/]", "[#0000FF]Duration[/]");
+            foreach (var song in allSongs)
             {
+                Table.AddRow("[#FF0000]" + Counter.ToString() + "[/]", "[#FF7F00]" + song.Title + "[/]", "[#FFFF00]" + song.Artists.Count() + "[/]", "[#00FF00]" + song.SongGenre + "[/]", "[#0000FF]" + song.Duration + " seconds[/]");
                 Counter++;
-                AnsiConsole.MarkupLine($"[green]{Counter}[/] - [yellow]{song.Title}[/] - [blue]{song.Artists}[/] - [red]{song.Duration}[/]");
             }
+
+            AnsiConsole.Render(Table);
         }
 
         public void SelectSong(int id)
