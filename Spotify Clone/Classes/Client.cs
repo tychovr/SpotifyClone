@@ -115,6 +115,11 @@ namespace Spotify_Clone
 
         public void Pause()
         {
+            if (CurrentlyPlaying != null)
+            {
+                Playing = false;
+                CurrentlyPlaying.Pause();
+            }
         }
 
         public void Stop()
