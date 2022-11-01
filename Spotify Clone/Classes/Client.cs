@@ -133,6 +133,10 @@ namespace Spotify_Clone
 
         public void NextSong()
         {
+            if (CurrentlyPlaying != null)
+            {
+                CurrentlyPlaying.Next();
+            }
         }
 
         public void SetShuffle()
