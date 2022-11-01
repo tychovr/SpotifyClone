@@ -23,6 +23,11 @@ namespace Spotify_Clone
 
         public SuperUser ActiveUser { get => activeUser; set => activeUser = value; }
 
+        public Client(SuperUser person)
+        {
+            activeUser = person;
+        }
+
         public Client(List<Person> person, List<Album> album, List<Song> song)
         {
         }
