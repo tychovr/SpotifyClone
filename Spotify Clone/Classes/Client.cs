@@ -34,9 +34,12 @@ namespace Spotify_Clone
 
         public void ShowAllAlbums()
         {
+            int Counter = 0;
+
             foreach (Album album in allAlbums)
             {
-                Console.WriteLine(album);
+                Counter++;
+                AnsiConsole.MarkupLine($"[green]{Counter}[/] - [yellow]{album.Title}[/]");
             }
         }
 
