@@ -53,7 +53,7 @@ namespace Spotify_Clone
 
         public void SelectUser(int id)
         {
-
+            Person SelectedUser = allUsers[id];
         }
 
         public void ShowUserPlaylists()
@@ -77,12 +77,10 @@ namespace Spotify_Clone
 
         public void SelectUserPlaylist(int id)
         {
-
         }
 
         public void Play()
         {
-
         }
 
         public void Pause()
@@ -95,7 +93,6 @@ namespace Spotify_Clone
 
         public void NextSong()
         {
-
         }
 
         public void SetShuffle()
