@@ -1,4 +1,6 @@
-﻿namespace Spotify_Clone
+﻿using System.Collections.Generic;
+
+namespace Spotify_Clone
 {
     class Program
     {
@@ -199,6 +201,39 @@
             kyara.Friends.Add(luuk);
             fabian.Friends.Add(tycho);
             fabian.Friends.Add(luuk);
+
+            // Add all data to lists
+            List<Person> allUsers = new List<Person>();
+            List<Album> allAlbums = new List<Album>();
+            List<Song> allSongs = new List<Song>();
+
+            allUsers.Add(tycho);
+            allUsers.Add(luuk);
+            allUsers.Add(kyara);
+            allUsers.Add(fabian);
+
+            allAlbums.Add(albumContagion);
+            allAlbums.Add(albumRennaisanceOfRave);
+            allAlbums.Add(albumLegendsOfTheElite);
+            allAlbums.Add(albumTheReturnOfHeadhunterz);
+            allAlbums.Add(albumArtificalIntoxication);
+            allAlbums.Add(albumTheFirstDose);
+
+            allSongs.Add(darkestHourTheClock);
+            allSongs.Add(theSolution);
+            allSongs.Add(rennaisanceOfRave);
+            allSongs.Add(tripToMarsAstronauts);
+            allSongs.Add(edgeOfTheUnknown);
+            allSongs.Add(byTheSword);
+            allSongs.Add(rescueMe);
+            allSongs.Add(noOneCanStopUsNow);
+            allSongs.Add(aI);
+            allSongs.Add(sideFxs);
+            allSongs.Add(dieGladiator);
+            allSongs.Add(outtaControl);
+
+            // Set SuperUser
+            SuperUser superUser = new SuperUser(tycho.Friends, "Tycho", allAlbums, allSongs, allUsers);
 
             // Activate hardcoded test
             TestCode testCode = new TestCode();
