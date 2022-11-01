@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,6 +34,10 @@ namespace Spotify_Clone
 
         public void ShowAllAlbums()
         {
+            foreach (Album album in allAlbums)
+            {
+                Console.WriteLine(album);
+            }
         }
 
         public void SelectAlbum(int id)
@@ -41,9 +46,12 @@ namespace Spotify_Clone
 
         public void ShowAllSongs()
         {
+            int Counter = 0;
+
             foreach (Song song in allSongs)
             {
-                AnsiConsole.MarkupLine($"[green]{song.Id}[/] - [yellow]{song.Title}[/] - [blue]{song.Artist}[/] - [red]{song.Length}[/]");
+                Counter++;
+                AnsiConsole.MarkupLine($"[green]{Counter}[/] - [yellow]{song.Title}[/] - [blue]{song.Artists}[/] - [red]{song.Duration}[/]");
             }
         }
 

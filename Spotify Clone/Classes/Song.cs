@@ -11,12 +11,12 @@ namespace Spotify_Clone
         private string title;
         private List<Artist> artists;
         private Genre songGenre;
+        private int duration;
 
         public string Title { get { return title; } set { title = value; } }
         public List<Artist> Artists { get { return artists; } set { artists = value; } }
         public Genre SongGenre { get { return songGenre; } set { songGenre = value; } }
-
-        private int Duration;
+        public int Duration { get { return duration; } set { duration = value; } }
 
         public Song(List<Artist> artist, Genre genre, int songID, int duration)
         {
