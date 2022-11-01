@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Spectre.Console;
 
 namespace Spotify_Clone
 {
@@ -234,11 +235,74 @@ namespace Spotify_Clone
 
             // Set SuperUser
             SuperUser superUser = new SuperUser(tycho.Friends, "Tycho", allAlbums, allSongs, allUsers);
+
+            // Start TestCode()
+            TestCode(superUser);
         }
 
-        public void TestCode()
+        public static void TestCode(SuperUser SuperUser)
         {
+            // Loading test animation
+            AnsiConsole.Progress()
+                .Columns(new ProgressColumn[]
+                {
+                    new TaskDescriptionColumn(),    // Task description
+                    new PercentageColumn(),         // Percentage
+                    new ProgressBarColumn(),        // Progress bar
+                    new RemainingTimeColumn(),      // Remaining time
+                    new SpinnerColumn(),            // Spinner
+                })
+            .Start(ctx =>
+            {
+                // Define tasks
+                var task1 = ctx.AddTask("[#FF0000]Adding Users[/]");
+                var task2 = ctx.AddTask("[#FF7F00]Adding Artists[/]");
+                var task3 = ctx.AddTask("[#FFFF00]Adding Songcollection[/]");
+                var task4 = ctx.AddTask("[#00FF00]Adding Albums[/]");
+                var task5 = ctx.AddTask("[#0000FF]Adding Playlists[/]");
+                var task6 = ctx.AddTask("[#2E2B5F]Adding SuperUser[/]");
+                var task7 = ctx.AddTask("[#8B00FF]Giving you a big smile[/]");
 
+
+                while (!ctx.IsFinished)
+                {
+                    task1.Increment(2);
+                    task2.Increment(1.9);
+                    task3.Increment(1.7);
+                    task4.Increment(1.5);
+                    task5.Increment(1.3);
+                    task6.Increment(1);
+                    task7.Increment(0.8);
+                    Thread.Sleep(100);
+                }
+            });
+
+            Console.Clear();
+
+            AnsiConsole.Progress()
+                .Columns(new ProgressColumn[]
+                {
+                    new TaskDescriptionColumn(),    // Task description
+                    new PercentageColumn(),         // Percentage
+                    new ProgressBarColumn(),        // Progress bar
+                    new RemainingTimeColumn(),      // Remaining time
+                    new SpinnerColumn(),            // Spinner
+                })
+            .Start(ctx =>
+            {
+                // Define tasks
+                var task1 = ctx.AddTask("[#FF0000]Removing the big smile I just gave you[/]");
+                var task2 = ctx.AddTask("[#0000FF]Starting Test[/]");
+                task1.Value = 99;
+
+                for (int i = 0; i < 100; i++)
+                {
+                    task1.Increment(-1);
+                    task2.Increment(1);
+                    Thread.Sleep(100);
+                }
+                Thread.Sleep(50);
+            });
         }
     }
 }
