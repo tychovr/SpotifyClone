@@ -8,12 +8,18 @@ namespace Spotify_Clone
 {
     internal class Album : SongCollection
     {
-        private List<Artist> Artists;
-        private List<Song> Songs;
-        private List<Album> Albums;
+        private List<Artist> Artists = new List<Artist>();
+        private List<Song> Songs = new List<Song>();
+        private List<Album> Albums = new List<Album>();
 
         public Album(List<Artist> artist, string title, List<Song> song) : base(title)
         {
+            Artists = artist;
+
+            foreach (Song s in song)
+            {
+                Playables.Add(s);
+            }
         }
 
         public void AddSong(Song song)
