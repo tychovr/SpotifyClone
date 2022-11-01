@@ -9,7 +9,7 @@ namespace Spotify_Clone
     internal class SongCollection : IPlayable
     {
         public string Title;
-        private List<IPlayable> playables;
+        private List<IPlayable> playables = new List<IPlayable>();
 
         public List<IPlayable> Playables { get => playables; set => playables = value; }
 
