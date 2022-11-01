@@ -17,9 +17,9 @@ namespace Spotify_Clone
         public bool Shuffle;
         public bool Repeat;
         private SuperUser activeUser;
-        private List<Album> allAlbums;
-        private List<Song> allSongs;
-        private List<Person> allUsers;
+        private List<Album> allAlbums = new List<Album>();
+        private List<Song> allSongs = new List<Song>();
+        private List<Person> allUsers = new List<Person>();
 
         public SuperUser ActiveUser { get => activeUser; set => activeUser = value; }
 
