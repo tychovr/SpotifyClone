@@ -273,7 +273,7 @@ namespace Spotify_Clone
                     task5.Increment(1.3);
                     task6.Increment(1);
                     task7.Increment(0.8);
-                    Thread.Sleep(100);
+                    Thread.Sleep(1);
                 }
             });
 
@@ -299,9 +299,17 @@ namespace Spotify_Clone
                 {
                     task1.Increment(-1);
                     task2.Increment(1);
-                    Thread.Sleep(100);
+                    Thread.Sleep(1);
                 }
             });
+
+            Thread.Sleep(69);
+            Console.Clear();
+
+            // Start client tests
+            Client client = new Client(SuperUser);
+
+            client.ShowAllAlbums();
         }
     }
 }
