@@ -311,17 +311,17 @@ namespace Spotify_Clone
 
             TypeWriter("Client.cs - ShowAllAlbums() | Showcase");
             client.ShowAllAlbums();
-            Thread.Sleep(1000);
+            Thread.Sleep(10000);
             Console.Clear();
 
             TypeWriter("Client.cs - ShowAllSongs() | Showcase");
             client.ShowAllSongs();
-            Thread.Sleep(1000);
+            Thread.Sleep(10000);
             Console.Clear();
 
             TypeWriter("Client.cs - ShowAllUsers() | Showcase");
             client.ShowAllUsers();
-            Thread.Sleep(1000);
+            Thread.Sleep(10000);
             Console.Clear();
         }
 
