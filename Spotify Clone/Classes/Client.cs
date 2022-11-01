@@ -152,7 +152,7 @@ namespace Spotify_Clone
 
         public void RemoveFromPlaylist(int id)
         {
-
+            activeUser.Playlists[SelectedId].Remove(allSongs[id]);
         }
 
         public void ShowFriends()
