@@ -310,6 +310,7 @@ namespace Spotify_Clone
             Client client = new Client(SuperUser);
 
             client.ShowAllAlbums();
+            client.ShowAllSongs();
         }
     }
 }
