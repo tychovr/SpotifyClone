@@ -9,7 +9,7 @@ namespace Spotify_Clone
     internal class Song : IPlayable
     {
         private string title;
-        private List<Artist> artists;
+        private List<Artist> artists = new List<Artist>();
         private Genre songGenre;
         private int duration;
 
