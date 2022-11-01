@@ -45,7 +45,7 @@ namespace Spotify_Clone
             int Counter = 1;
 
             var Table = new Table().Centered();
-            Table.Title("[#42d660][bold]All albums:[/][/]");
+            Table.Title("[#42d660][bold]ShowAllAlbums():[/][/]");
             Table.Border(TableBorder.HeavyEdge);
             Table.AddColumns("[#FF0000]ID[/]", "[#FF7F00]Title[/]", "[#FFFF00]Artist[/]", "[#00FF00]Songs[/]");
 
@@ -68,7 +68,7 @@ namespace Spotify_Clone
             int Counter = 1;
 
             var Table = new Table().Centered();
-            Table.Title("[#42d660][bold]All songs:[/][/]");
+            Table.Title("[#42d660][bold]ShowAllSongs():[/][/]");
             Table.Border(TableBorder.HeavyEdge);
             Table.AddColumns("[#FF0000]ID[/]", "[#FF7F00]Title[/]", "[#FFFF00]Artists[/]", "[#00FF00]Genre[/]", "[#0000FF]Duration[/]");
             foreach (var song in allSongs)
@@ -87,13 +87,19 @@ namespace Spotify_Clone
 
         public void ShowAllUsers()
         {
-            int Counter = 0;
+            int Counter = 1;
 
-            foreach (var user in allUsers)
+            var Table = new Table().Centered();
+            Table.Title("[#42d660][bold]All users:[/][/]");
+            Table.Border(TableBorder.HeavyEdge);
+            Table.AddColumns("[#FF0000]ID[/]", "[#FF7F00]Name[/]", "[#FFFF00]Friends[/]", "[#00FF00]Playlists[/]");
+            foreach (var person in allUsers)
             {
-                AnsiConsole.MarkupLine($"[{Counter}] {user.Name}");
+                Table.AddRow("[#FF0000]" + Counter.ToString() + "[/]", "[#FF7F00]" + person.Name + "[/]", "[#FFFF00]" + person.Friends.Count() + "[/]", "[#00FF00]" + person.Playlists.Count() + "[/]");
                 Counter++;
             }
+
+            AnsiConsole.Render(Table);
         }
 
         public void SelectUser(int id)
