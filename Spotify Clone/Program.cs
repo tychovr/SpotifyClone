@@ -311,6 +311,7 @@ namespace Spotify_Clone
 
             client.ShowAllAlbums();
             client.ShowAllSongs();
+            client.ShowAllUsers();
         }
     }
 }
