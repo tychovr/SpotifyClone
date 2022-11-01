@@ -237,10 +237,10 @@ namespace Spotify_Clone
             SuperUser superUser = new SuperUser(tycho.Friends, "Tycho", allAlbums, allSongs, allUsers);
 
             // Start TestCode()
-            TestCode(superUser);
+            TestCode(superUser, tycho);
         }
 
-        public static void TestCode(SuperUser SuperUser)
+        public static void TestCode(SuperUser SuperUser, Person ActiveUser)
         {
             // Loading test animation
             AnsiConsole.Progress()
@@ -310,6 +310,7 @@ namespace Spotify_Clone
             Client client = new Client(SuperUser);
 
             TypeWriter("De SuperUser zal Tycho zijn");
+            client.SetActiveUser(ActiveUser);
             Thread.Sleep(3000);
             Console.Clear();
 
