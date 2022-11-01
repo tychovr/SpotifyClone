@@ -49,6 +49,13 @@ namespace Spotify_Clone
 
         public void ShowAllUsers()
         {
+            int Counter = 0;
+
+            foreach (var user in allUsers)
+            {
+                AnsiConsole.MarkupLine($"[{Counter}] {user.Name}");
+                Counter++;
+            }
         }
 
         public void SelectUser(int id)
