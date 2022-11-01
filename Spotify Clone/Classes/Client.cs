@@ -95,22 +95,17 @@ namespace Spotify_Clone
 
         public void NextSong()
         {
+
         }
 
         public void SetShuffle()
         {
-            if (Shuffle == true)
-            {
-                Shuffle = false;
-            }
-            else
-            {
-                Shuffle = true;
-            }
+
         }
 
         public void SetRepeat()
         {
+            Repeat = !Repeat;
         }
 
         public void CreatePlaylist(string name)
