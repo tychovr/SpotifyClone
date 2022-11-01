@@ -90,7 +90,7 @@ namespace Spotify_Clone
             int Counter = 1;
 
             var Table = new Table().Centered();
-            Table.Title("[#42d660][bold]All users:[/][/]");
+            Table.Title("[#42d660][bold]ShowAllUsers():[/][/]");
             Table.Border(TableBorder.HeavyEdge);
             Table.AddColumns("[#FF0000]ID[/]", "[#FF7F00]Name[/]", "[#FFFF00]Friends[/]", "[#00FF00]Playlists[/]");
             foreach (var person in allUsers)
