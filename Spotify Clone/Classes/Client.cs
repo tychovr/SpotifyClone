@@ -41,6 +41,10 @@ namespace Spotify_Clone
 
         public void ShowAllSongs()
         {
+            foreach (Song song in allSongs)
+            {
+                AnsiConsole.MarkupLine($"[green]{song.Id}[/] - [yellow]{song.Title}[/] - [blue]{song.Artist}[/] - [red]{song.Length}[/]");
+            }
         }
 
         public void SelectSong(int id)
