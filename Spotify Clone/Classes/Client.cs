@@ -45,6 +45,7 @@ namespace Spotify_Clone
 
         public void SelectAlbum(int id)
         {
+            Album SelectedAlbum = allAlbums[id];
         }
 
         public void ShowAllSongs()
