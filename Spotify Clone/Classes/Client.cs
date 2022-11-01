@@ -45,7 +45,7 @@ namespace Spotify_Clone
             int Counter = 1;
 
             var Table = new Table().Centered();
-            Table.Title("[#42d660][bold]ShowAllAlbums():[/][/]");
+            Table.Title("[#0c0c0c].[/]");
             Table.Border(TableBorder.HeavyEdge);
             Table.AddColumns("[#FF0000]ID[/]", "[#FF7F00]Title[/]", "[#FFFF00]Artist[/]", "[#00FF00]Songs[/]");
 
@@ -68,7 +68,7 @@ namespace Spotify_Clone
             int Counter = 1;
 
             var Table = new Table().Centered();
-            Table.Title("[#42d660][bold]ShowAllSongs():[/][/]");
+            Table.Title("[#0c0c0c].[/]");
             Table.Border(TableBorder.HeavyEdge);
             Table.AddColumns("[#FF0000]ID[/]", "[#FF7F00]Title[/]", "[#FFFF00]Artists[/]", "[#00FF00]Genre[/]", "[#0000FF]Duration[/]");
             foreach (var song in allSongs)
@@ -90,7 +90,7 @@ namespace Spotify_Clone
             int Counter = 1;
 
             var Table = new Table().Centered();
-            Table.Title("[#42d660][bold]ShowAllUsers():[/][/]");
+            Table.Title("[#0c0c0c].[/]").Centered();
             Table.Border(TableBorder.HeavyEdge);
             Table.AddColumns("[#FF0000]ID[/]", "[#FF7F00]Name[/]", "[#FFFF00]Friends[/]", "[#00FF00]Playlists[/]");
             foreach (var person in allUsers)
