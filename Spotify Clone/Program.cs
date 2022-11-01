@@ -199,6 +199,10 @@
             kyara.Friends.Add(luuk);
             fabian.Friends.Add(tycho);
             fabian.Friends.Add(luuk);
+
+            // Activate hardcoded test
+            CodeTest codeTest = new CodeTest();
+            codeTest.Test();
         }
     }
 }
