@@ -134,6 +134,7 @@ namespace Spotify_Clone
 
         public void SelectPlaylist(int id)
         {
+            SelectedId = id;
         }
 
         public void RemovePlaylists(int id)
