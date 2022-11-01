@@ -234,10 +234,11 @@ namespace Spotify_Clone
 
             // Set SuperUser
             SuperUser superUser = new SuperUser(tycho.Friends, "Tycho", allAlbums, allSongs, allUsers);
+        }
 
-            // Activate hardcoded test
-            TestCode testCode = new TestCode();
-            testCode.StartTest();
+        public void TestCode()
+        {
+
         }
     }
 }
