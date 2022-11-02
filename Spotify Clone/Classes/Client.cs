@@ -106,6 +106,7 @@ namespace Spotify_Clone
         public void SelectUser(int id)
         {
             Person SelectedUser = allUsers[id];
+            Program.TypeWriter2("Selected user: " + SelectedUser.Name);
         }
 
         public void ShowUserPlaylists()
