@@ -202,6 +202,17 @@ namespace Spotify_Clone
         public void SetRepeat()
         {
             Repeat = !Repeat;
+
+            if (Repeat)
+            {
+                Console.SetCursorPosition(5, 10);
+                Program.TypeWriter2("Switched repeat on!");
+            }
+            else
+            {
+                Console.SetCursorPosition(5, 10);
+                Program.TypeWriter2("Switched repeat off!");
+            }
         }
 
         public void CreatePlaylist(string name)
