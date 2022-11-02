@@ -37,6 +37,8 @@ namespace Spotify_Clone
                 Random random = new Random();
                 int randomIndex = random.Next(0, Playables.Count);
                 Playables[randomIndex].Play();
+
+                Console.WriteLine("Playing " + Playables[randomIndex].ToString());
             }
 
             else
@@ -44,6 +46,7 @@ namespace Spotify_Clone
                 foreach (IPlayable playable in Playables)
                 {
                     playable.Play();
+                    Console.WriteLine("Playing " + playable.ToString());
 
                     Thread.Sleep(3000);
                     Console.Clear();
