@@ -330,7 +330,19 @@ namespace Spotify_Clone
 
         public void RemoveFriend(int id)
         {
-            activeUser.RemoveFriend(allUsers[id]);
+            if (id < activeUser.Person.Friends.Count)
+            {
+                Console.SetCursorPosition(5, 10);
+                Program.TypeWriter2("Removed " + allUsers[id].Name + " as a friend!");
+
+                activeUser.RemoveFriend(allUsers[id]);
+
+            }
+            else
+            {
+                Console.SetCursorPosition(5, 10);
+                Program.TypeWriter2("There is no friend with that ID in your friends list!");
+            }
         }
     }
 }
