@@ -315,22 +315,22 @@ namespace Spotify_Clone
 
             TypeWriter("Client.cs - ShowAllAlbums() | Showcase");
             client.ShowAllAlbums();
-            Thread.Sleep(10000);
+            Thread.Sleep(1);
             Console.Clear();
 
             TypeWriter("Client.cs - ShowAllSongs() | Showcase");
             client.ShowAllSongs();
-            Thread.Sleep(10000);
+            Thread.Sleep(1);
             Console.Clear();
 
             TypeWriter("Client.cs - ShowAllUsers() | Showcase");
             client.ShowAllUsers();
-            Thread.Sleep(10000);
+            Thread.Sleep(1);
             Console.Clear();
 
             TypeWriter("Client.cs - ShowUserPlaylists() | Showcase");
             client.ShowUserPlaylists();
-            Thread.Sleep(10000);
+            Thread.Sleep(1);
             Console.Clear();
         }
 
