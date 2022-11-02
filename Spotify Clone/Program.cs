@@ -233,14 +233,13 @@ namespace Spotify_Clone
             allSongs.Add(dieGladiator);
             allSongs.Add(outtaControl);
 
-            // Set SuperUser
-            SuperUser superUser = new SuperUser(tycho.Friends, "Tycho", allAlbums, allSongs, allUsers);
-
             // Start TestCode()
-            TestCode(superUser, tycho);
+            SuperUser SuperUser = new SuperUser("Tycho", tycho);
+
+            TestCode(SuperUser);
         }
 
-        public static void TestCode(SuperUser SuperUser, Person ActiveUser)
+        public static void TestCode(SuperUser SuperUser)
         {
             // Loading test animation
             AnsiConsole.Progress()
@@ -304,29 +303,6 @@ namespace Spotify_Clone
             });
 
             Thread.Sleep(69);
-            Console.Clear();
-
-            // Start client tests
-            Client client = new Client(SuperUser);
-
-            TypeWriter("De SuperUser zal Tycho zijn");
-            client.SetActiveUser(ActiveUser);
-            Thread.Sleep(3000);
-            Console.Clear();
-
-            TypeWriter("Client.cs - ShowAllAlbums() | Showcase");
-            client.ShowAllAlbums();
-            Thread.Sleep(10000);
-            Console.Clear();
-
-            TypeWriter("Client.cs - ShowAllSongs() | Showcase");
-            client.ShowAllSongs();
-            Thread.Sleep(10000);
-            Console.Clear();
-
-            TypeWriter("Client.cs - ShowAllUsers() | Showcase");
-            client.ShowAllUsers();
-            Thread.Sleep(10000);
             Console.Clear();
         }
 
