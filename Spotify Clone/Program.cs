@@ -308,6 +308,11 @@ namespace Spotify_Clone
 
             // Start client tests
             Client client = new Client(SuperUser);
+
+            TypeWriter("Client.cs - ShowUserPlaylists() | Showcase");
+            client.ShowUserPlaylists();
+            Thread.Sleep(10000);
+            Console.Clear();
         }
 
         // Explains every test in a cool and fast effect
