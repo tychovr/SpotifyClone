@@ -224,7 +224,18 @@ namespace Spotify_Clone
 
         public void RemovePlaylists(int id)
         {
-            activeUser.RemovePlayList(id);
+            if (id < activeUser.Person.Playlists.Count)
+            {
+                Console.SetCursorPosition(5, 10);
+                Program.TypeWriter2("Removed " + activeUser.Person.Playlists[id].Title + " from " + activeUser.Name + "'s playlists");
+
+                activeUser.RemovePlayList(id);
+            }
+            else
+            {
+                Console.SetCursorPosition(5, 10);
+                Program.TypeWriter2("There is no playlist with that ID");
+            }
         }
 
         public void AddSongToPlaylist(int id)
