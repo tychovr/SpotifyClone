@@ -225,7 +225,7 @@ namespace Spotify_Clone
 
         public void ShowPlaylists()
         {
-            int i = 0;
+            int counter = 0;
 
             var table = new Table();
             table.Border = TableBorder.Rounded;
@@ -234,9 +234,9 @@ namespace Spotify_Clone
             table.AddColumn("Playlist Title");
             table.AddColumn("Creator");
 
-            for (i = 0; i < activeUser.Playlists.Count; i++)
+            for (counter = 0; counter < activeUser.Playlists.Count; counter++)
             {
-                table.AddRow(i.ToString(), activeUser.Playlists[i].Title, activeUser.Name);
+                table.AddRow(counter.ToString(), activeUser.Playlists[counter].Title, activeUser.Name);
             }
 
             AnsiConsole.Write(table);
@@ -273,6 +273,21 @@ namespace Spotify_Clone
 
         public void ShowSongsInPlaylist()
         {
+            int counter = 0;
+
+            var table = new Table();
+            table.Border = TableBorder.Rounded;
+
+            table.AddColumn("ID");
+            table.AddColumn("Song Title");
+
+            foreach (var song in activeUser.Playlists[SelectedId].Playables)
+            {
+                table.AddRow(counter.ToString(), song.Title);
+                counter++;
+            }
+
+            AnsiConsole.Write(table);
         }
 
         public void RemoveFromPlaylist(int id)
