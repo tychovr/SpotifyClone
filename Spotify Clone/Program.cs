@@ -352,5 +352,18 @@ namespace Spotify_Clone
 
             Console.CursorTop = Console.CursorTop + 3;
         }
+
+        public static void TypeWriter2(string text)
+        {
+            Console.SetCursorPosition(5, 10);
+
+            for (int i = 0; i < text.Length; i++)
+            {
+                Console.Write(text[i]);
+                Thread.Sleep(50);
+            }
+
+            Console.CursorTop = Console.CursorTop + 3;
+        }
     }
 }
