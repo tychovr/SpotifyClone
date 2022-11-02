@@ -91,6 +91,7 @@ namespace Spotify_Clone
 
             foreach (var artist in SelectedSong.Artists)
             {
+                Console.CursorTop = Console.CursorTop - 3;
                 Program.TypeWriter2(artist.Name + " ");
             }
         }
