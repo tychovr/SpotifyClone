@@ -16,7 +16,11 @@ namespace Spotify_Clone
         public List<Song> AllSongs { get => allSongs; set => allSongs = value; }
         public List<Person> AllUsers { get => allUsers; set => allUsers = value; }
 
-        public SuperUser(List<Person> friendList, string name, List<Album> album, List<Song> song, List<Person> person) : base(name)
+        public SuperUser(string name, Person person) : base(name)
+        {
+        }
+
+        public SuperUser(string name, List<Album> album, List<Song> song, List<Person> person) : base(name)
         {
             AllAlbums = album;
             AllSongs = song;
