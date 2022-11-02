@@ -368,8 +368,6 @@ namespace Spotify_Clone
 
         public static void TypeWriter2(string text)
         {
-            Console.SetCursorPosition(5, 10);
-
             for (int i = 0; i < text.Length; i++)
             {
                 Console.Write(text[i]);
