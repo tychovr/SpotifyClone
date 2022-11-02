@@ -60,6 +60,7 @@ namespace Spotify_Clone
         public void SelectAlbum(int id)
         {
             Album SelectedAlbum = allAlbums[id];
+            Program.TypeWriter2("Selected album: " + SelectedAlbum.Title);
         }
 
         public void ShowAllSongs()
