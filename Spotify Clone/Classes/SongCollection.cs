@@ -30,7 +30,29 @@ namespace Spotify_Clone
 
         public void Play()
         {
-            Console.WriteLine("Playing: " + Title);
+            Client client = new Client();
+            if (client.Shuffle)
+            {
+                Random random = new Random();
+                int randomIndex = random.Next(0, Playables.Count);
+                Playables[randomIndex].Play();
+            }
+
+            else
+            {
+                foreach (IPlayable playable in Playables)
+                {
+                    playable.Play();
+
+                    Thread.Sleep(3000);
+                    Console.Clear();
+                }
+            }
+
+            if (client.Repeat)
+            {
+                Play();
+            }
         }
 
         public void Pause()
