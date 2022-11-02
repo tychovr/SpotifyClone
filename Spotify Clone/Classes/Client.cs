@@ -281,9 +281,9 @@ namespace Spotify_Clone
             table.AddColumn("ID");
             table.AddColumn("Song Title");
 
-            foreach (var song in activeUser.Playlists[SelectedId].Playables)
+            foreach (var playable in activeUser.Playlists[SelectedId].Playables)
             {
-                table.AddRow(counter.ToString(), song.Title);
+                table.AddRow(counter.ToString(), playable.ToString());
                 counter++;
             }
 
