@@ -60,6 +60,8 @@ namespace Spotify_Clone
         public void SelectAlbum(int id)
         {
             Album SelectedAlbum = allAlbums[id];
+
+            Console.SetCursorPosition(5, 10);
             Program.TypeWriter2("Selected album: " + SelectedAlbum.Title);
         }
 
@@ -83,7 +85,14 @@ namespace Spotify_Clone
         public void SelectSong(int id)
         {
             Song SelectedSong = allSongs[id];
-            Program.TypeWriter2("Selected song: " + SelectedSong.Title);
+
+            Console.SetCursorPosition(5, 10);
+            Program.TypeWriter2("Selected song: " + SelectedSong.Title + " by ");
+
+            foreach (var artist in SelectedSong.Artists)
+            {
+                Program.TypeWriter2(artist.Name + " ");
+            }
         }
 
         public void ShowAllUsers()
@@ -106,6 +115,8 @@ namespace Spotify_Clone
         public void SelectUser(int id)
         {
             Person SelectedUser = allUsers[id];
+
+            Console.SetCursorPosition(5, 10);
             Program.TypeWriter2("Selected user: " + SelectedUser.Name);
         }
 
@@ -131,6 +142,8 @@ namespace Spotify_Clone
         public void SelectUserPlaylist(int id)
         {
             Playlist SelectedPlaylist = allUsers[SelectedId].Playlists[id];
+
+            Console.SetCursorPosition(5, 10);
             Program.TypeWriter2("Selected playlist: " + SelectedPlaylist.Title + " by " + SelectedPlaylist.Owner.Name);
         }
 
