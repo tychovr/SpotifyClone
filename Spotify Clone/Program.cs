@@ -304,6 +304,10 @@ namespace Spotify_Clone
 
             Thread.Sleep(69);
             Console.Clear();
+
+
+            // Start client tests
+            Client client = new Client(SuperUser);
         }
 
         // Explains every test in a cool and fast effect
