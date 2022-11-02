@@ -23,26 +23,21 @@ namespace Spotify_Clone
 
         public SuperUser ActiveUser { get => activeUser; set => activeUser = value; }
 
-        public Client(SuperUser superUser)
+        public Client(SuperUser superUser, List<Album> album, List<Song> song, List<Person> user)
         {
-            activeUser = superUser;
-            allAlbums = superUser.AllAlbums;
-            allSongs = superUser.AllSongs;
-            allUsers = superUser.AllUsers;
+            allAlbums = album;
+            allSongs = song;
+            allUsers = user;
         }
 
-        public Client(List<Person> person, List<Album> album, List<Song> song)
+        public void SetActiveUser(SuperUser superUser)
         {
-        }
-
-        public void SetActiveUser(Person person)
-        {
-            activeUser = (SuperUser)person;
+            ActiveUser = superUser;
         }
 
         public void ShowAllAlbums()
         {
-            int Counter = 1;
+            int Counter = 0;
 
             var Table = new Table().Centered();
             Table.Title("[#0c0c0c].[/]");
@@ -65,7 +60,7 @@ namespace Spotify_Clone
 
         public void ShowAllSongs()
         {
-            int Counter = 1;
+            int Counter = 0;
 
             var Table = new Table().Centered();
             Table.Title("[#0c0c0c].[/]");
@@ -87,7 +82,7 @@ namespace Spotify_Clone
 
         public void ShowAllUsers()
         {
-            int Counter = 1;
+            int Counter = 0;
 
             var Table = new Table().Centered();
             Table.Title("[#0c0c0c].[/]").Centered();
@@ -109,21 +104,21 @@ namespace Spotify_Clone
 
         public void ShowUserPlaylists()
         {
-            int i = 0;
+            int Counter = 0;
 
-            var table = new Table();
-            table.Border = TableBorder.Rounded;
+            var Table = new Table().Centered();
 
-            table.AddColumn("ID");
-            table.AddColumn("Playlist Title");
-            table.AddColumn("Creator");
+            Table.Title("[#0c0c0c].[/]");
+            Table.Border(TableBorder.HeavyEdge);
+            Table.AddColumns("[#FF0000]ID[/]", "[#FF7F00]Name[/]", "[#FFFF00]Songs[/]");
 
-            for (i = 0; i < allUsers[SelectedId].Playlists.Count; i++)
+            foreach (var playlist in ActiveUser.Person.Playlists)
             {
-                table.AddRow(i.ToString(), allUsers[SelectedId].Playlists[i].Title, allUsers[SelectedId].Name);
+                Table.AddRow("[#FF0000]" + Counter.ToString() + "[/]", "[#FF7F00]" + playlist.Title + "[/]", "[#FFFF00]" + playlist.Playables.Count() + "[/]");
+                Counter++;
             }
 
-            AnsiConsole.Write(table);
+            AnsiConsole.Write(Table);
         }
 
         public void SelectUserPlaylist(int id)
