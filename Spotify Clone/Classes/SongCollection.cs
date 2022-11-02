@@ -31,6 +31,7 @@ namespace Spotify_Clone
         public void Play()
         {
             Client client = new Client();
+
             if (client.Shuffle)
             {
                 Random random = new Random();
