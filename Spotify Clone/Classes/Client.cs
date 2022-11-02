@@ -314,6 +314,10 @@ namespace Spotify_Clone
 
         public void SelectFriend(int id)
         {
+            SelectedId = id;
+
+            Console.SetCursorPosition(5, 10);
+            Program.TypeWriter2("Selected friend: " + activeUser.Friends[id]);
         }
 
         public void AddFriend(int id)
