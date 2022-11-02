@@ -230,6 +230,9 @@ namespace Spotify_Clone
         public void AddSongToPlaylist(int id)
         {
             activeUser.Playlists[SelectedId].Add(allSongs[id]);
+
+            Console.SetCursorPosition(5, 10);
+            Program.TypeWriter2("Added " + allSongs[id].Title + " to " + activeUser.Playlists[SelectedId].Title);
         }
 
         public void ShowSongsInPlaylist()
