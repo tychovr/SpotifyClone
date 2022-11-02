@@ -83,6 +83,7 @@ namespace Spotify_Clone
         public void SelectSong(int id)
         {
             Song SelectedSong = allSongs[id];
+            Program.TypeWriter2("Selected song: " + SelectedSong.Title);
         }
 
         public void ShowAllUsers()
