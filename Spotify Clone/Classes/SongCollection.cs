@@ -52,11 +52,6 @@ namespace Spotify_Clone
                     Console.Clear();
                 }
             }
-
-            if (client.Repeat)
-            {
-                Play();
-            }
         }
 
         public void Pause()
