@@ -11,20 +11,24 @@ namespace Spotify_Clone
         private List<Album> allAlbums = new List<Album>();
         private List<Song> allSongs = new List<Song>();
         private List<Person> allUsers = new List<Person>();
+        private Person person;
 
         public List<Album> AllAlbums { get => allAlbums; set => allAlbums = value; }
         public List<Song> AllSongs { get => allSongs; set => allSongs = value; }
         public List<Person> AllUsers { get => allUsers; set => allUsers = value; }
+        public Person Person { get => person; set => person = value; }
 
         public SuperUser(string name, Person person) : base(name)
         {
+            Person = person;
         }
 
-        public SuperUser(string name, List<Album> album, List<Song> song, List<Person> person) : base(name)
+        public SuperUser(string name, List<Album> album, List<Song> song, List<Person> users, Person person) : base(name)
         {
             AllAlbums = album;
             AllSongs = song;
-            AllUsers = person;
+            AllUsers = users;
+            Person = person;
         }
 
         public void AddFriend(Person person)
