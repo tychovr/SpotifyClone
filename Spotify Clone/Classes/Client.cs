@@ -186,6 +186,17 @@ namespace Spotify_Clone
         public void SetShuffle()
         {
             Shuffle = !Shuffle;
+
+            if (Shuffle)
+            {
+                Console.SetCursorPosition(5, 10);
+                Program.TypeWriter2("Switched shuffle on!");
+            }
+            else
+            {
+                Console.SetCursorPosition(5, 10);
+                Program.TypeWriter2("Switched shuffle off!");
+            }
         }
 
         public void SetRepeat()
