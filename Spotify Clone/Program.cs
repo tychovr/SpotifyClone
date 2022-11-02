@@ -234,6 +234,7 @@ namespace Spotify_Clone
             allSongs.Add(outtaControl);
 
             // Start TestCode()
+            SuperUser giveEverything = new SuperUser("Tycho", allAlbums, allSongs, allUsers);
             SuperUser SuperUser = new SuperUser("Tycho", tycho);
 
             TestCode(SuperUser);
