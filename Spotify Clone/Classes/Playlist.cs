@@ -9,10 +9,12 @@ namespace Spotify_Clone
     internal class Playlist : SongCollection
     {
         public Person Owner;
+        public string Title;
 
         public Playlist(Person person, string title) : base(title)
         {
             Owner = person;
+            Title = title;
         }
 
         public void Add(IPlayable playable)
