@@ -196,6 +196,9 @@ namespace Spotify_Clone
         public void CreatePlaylist(string name)
         {
             activeUser.CreatePlayList(name);
+
+            Console.SetCursorPosition(5, 10);
+            Program.TypeWriter2("Created " + name + " playlist succesfully!");
         }
 
         public void ShowPlaylists()
