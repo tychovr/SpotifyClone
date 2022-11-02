@@ -234,13 +234,13 @@ namespace Spotify_Clone
             allSongs.Add(outtaControl);
 
             // Start TestCode()
-            SuperUser giveEverything = new SuperUser("Tycho", allAlbums, allSongs, allUsers);
             SuperUser SuperUser = new SuperUser("Tycho", tycho);
+            Client client = new Client(SuperUser, allAlbums, allSongs, allUsers);
 
-            TestCode(SuperUser);
+            TestCode(client, SuperUser);
         }
 
-        public static void TestCode(SuperUser SuperUser)
+        public static void TestCode(Client client, SuperUser SuperUser)
         {
             // Loading test animation
             AnsiConsole.Progress()
@@ -308,8 +308,6 @@ namespace Spotify_Clone
 
 
             // Start client tests
-            Client client = new Client(SuperUser);
-
             TypeWriter("Client.cs - SetActiveUser() | Tycho");
             client.SetActiveUser(SuperUser);
             Thread.Sleep(3000);
