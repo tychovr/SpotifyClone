@@ -369,7 +369,7 @@ namespace Spotify_Clone
 
         public void SelectFriend(int id)
         {
-            if (id < activeUser.Friends.Count)
+            if (id < activeUser.Person.Friends.Count)
             {
                 SelectedId = id;
 
