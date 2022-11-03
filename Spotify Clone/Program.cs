@@ -447,6 +447,11 @@ namespace Spotify_Clone
             Thread.Sleep(5000);
             Console.Clear();
 
+            TypeWriter("Client.cs - SetShuffle() | Showcase");
+            TypeWriter2("This feature is not yet implemented");
+            Thread.Sleep(1500);
+            Console.Clear();
+
             TypeWriter("Client.cs - Play() | Playlist");
             allUsers[1].Playlists[0].Play();
             Thread.Sleep(3000);
