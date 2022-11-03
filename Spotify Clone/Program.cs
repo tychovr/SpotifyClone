@@ -380,6 +380,11 @@ namespace Spotify_Clone
             client.AddSongToPlaylist(0);
             Thread.Sleep(3000);
             Console.Clear();
+
+            TypeWriter("Client.cs - SelectPlaylist() | Showcase");
+            client.SelectPlaylist(4);
+            Thread.Sleep(3000);
+            Console.Clear();
         }
 
         // Explains every test in a cool and fast effect
