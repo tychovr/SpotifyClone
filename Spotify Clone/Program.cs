@@ -309,7 +309,7 @@ namespace Spotify_Clone
             // Start client tests
             TypeWriter("Client.cs - SetActiveUser() | Tycho");
             client.SetActiveUser(superUser);
-            Thread.Sleep(3000);
+            Thread.Sleep(1);
             Console.Clear();
 
             TypeWriter("Client.cs - ShowAllAlbums() | Showcase");
@@ -324,7 +324,7 @@ namespace Spotify_Clone
 
             TypeWriter("Client.cs - Play() | Album");
             allAlbums[2].Play();
-            Thread.Sleep(5000);
+            Thread.Sleep(1);
             Console.Clear();
 
             TypeWriter("Client.cs - ShowAllSongs() | Showcase");
@@ -334,12 +334,12 @@ namespace Spotify_Clone
 
             TypeWriter("Client.cs - SelectSong() | Showcase");
             client.SelectSong(2);
-            Thread.Sleep(3000);
+            Thread.Sleep(1);
             Console.Clear();
 
             TypeWriter("Client.cs - Play() | Song");
             allSongs[2].Play();
-            Thread.Sleep(5000);
+            Thread.Sleep(1);
             Console.Clear();
 
             TypeWriter("Client.cs - ShowAllUsers() | Showcase");
@@ -349,7 +349,7 @@ namespace Spotify_Clone
 
             TypeWriter("Client.cs - SelectUser() | Showcase");
             client.SelectUser(2);
-            Thread.Sleep(3000);
+            Thread.Sleep(1);
             Console.Clear();
 
             TypeWriter("Client.cs - ShowUserPlaylists() | Showcase");
@@ -359,7 +359,7 @@ namespace Spotify_Clone
 
             TypeWriter("Client.cs - SelectUserPlaylist() | Showcase");
             client.SelectUserPlaylist(0);
-            Thread.Sleep(3000);
+            Thread.Sleep(1);
             Console.Clear();
 
             TypeWriter("Client.cs - ShowSongsInPlaylist() | Showcase");
@@ -369,7 +369,7 @@ namespace Spotify_Clone
 
             TypeWriter("Client.cs - CreatePlaylist() | Showcase");
             client.CreatePlaylist("TestPlaylist");
-            Thread.Sleep(3000);
+            Thread.Sleep(1);
             Console.Clear();
 
             TypeWriter("Client.cs - AddSongToPlaylist() | Showcase");
@@ -378,12 +378,12 @@ namespace Spotify_Clone
             client.AddSongToPlaylist(5);
             client.AddSongToPlaylist(6);
             client.AddSongToPlaylist(0);
-            Thread.Sleep(3000);
+            Thread.Sleep(1);
             Console.Clear();
 
             TypeWriter("Client.cs - SelectPlaylist() | Showcase");
             client.SelectPlaylist(4);
-            Thread.Sleep(3000);
+            Thread.Sleep(1);
             Console.Clear();
 
             TypeWriter("Client.cs - ShowPlaylistSongs() | Showcase");
@@ -394,7 +394,7 @@ namespace Spotify_Clone
             TypeWriter("Client.cs - RemoveFromPlaylist() | Showcase");
             client.RemoveFromPlaylist(2);
             client.RemoveFromPlaylist(1);
-            Thread.Sleep(3000);
+            Thread.Sleep(1);
             Console.Clear();
 
             TypeWriter("Client.cs - ShowPlaylistSongs() | Showcase");
@@ -411,7 +411,7 @@ namespace Spotify_Clone
             for (int i = 0; i < text.Length; i++)
             {
                 Console.Write(text[i]);
-                Thread.Sleep(50);
+                Thread.Sleep(1);
             }
 
             Console.CursorTop = Console.CursorTop + 3;
@@ -422,7 +422,7 @@ namespace Spotify_Clone
             for (int i = 0; i < text.Length; i++)
             {
                 Console.Write(text[i]);
-                Thread.Sleep(50);
+                Thread.Sleep(1);
             }
 
             Console.CursorTop = Console.CursorTop + 3;
