@@ -322,15 +322,15 @@ namespace Spotify_Clone
             int counter = 0;
 
             var table = new Table();
+
             table.Title("[#0c0c0c].[/]");
             table.Border = TableBorder.Rounded;
-
-            table.AddColumn("ID");
-            table.AddColumn("Song Title");
+            table.AddColumn("[#FF0000]ID[/]");
+            table.AddColumn("[#FF7F00]Song Title[/]");
 
             foreach (var playable in activeUser.Person.Playlists[SelectedId].Playables)
             {
-                table.AddRow(counter.ToString(), playable.ToString());
+                table.AddRow("[#FF0000]" + counter.ToString() + "[/]", "[#FF7F00]" + playable.ToString() + "[/]");
                 counter++;
             }
 
