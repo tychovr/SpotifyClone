@@ -39,6 +39,9 @@ namespace Spotify_Clone
         public void SetActiveUser(SuperUser superUser)
         {
             ActiveUser = superUser;
+
+            Console.SetCursorPosition(5, 10);
+            Program.TypeWriter2("Logged in user: " + ActiveUser.Name);
         }
 
         public void ShowAllAlbums()
