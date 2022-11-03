@@ -344,7 +344,7 @@ namespace Spotify_Clone
             activeUser.RemovePlayList(SelectedId);
 
             Console.SetCursorPosition(5, 10);
-            Program.TypeWriter2("Removed " + activeUser.Person.Playlists[SelectedId].Title + " playlist succesfully!");
+            Program.TypeWriter2("Removed " + activeUser.Person.Playlists[SelectedId - 1].Title + " playlist succesfully!");
         }
 
         public void ShowFriends()
