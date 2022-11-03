@@ -43,7 +43,7 @@ namespace Spotify_Clone
 
         public void CreatePlayList(string name)
         {
-            Playlist playlist = new Playlist(this, name);
+            Playlist playlist = new Playlist(person, name);
             Person.Playlists.Add(playlist);
         }
 
