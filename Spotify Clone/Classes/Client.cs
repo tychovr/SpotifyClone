@@ -309,7 +309,21 @@ namespace Spotify_Clone
 
         public void ShowFriends()
         {
-            activeUser.Friends.ForEach(friend => Console.WriteLine(friend));
+            int counter = 0;
+
+            var table = new Table();
+            table.Border = TableBorder.Rounded;
+
+            table.AddColumn("ID");
+            table.AddColumn("Friend Name");
+
+            foreach (var friend in activeUser.Friends)
+            {
+                table.AddRow(counter.ToString(), friend.Name);
+                counter++;
+            }
+
+            AnsiConsole.Write(table);
         }
 
         public void SelectFriend(int id)
