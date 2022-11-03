@@ -372,6 +372,11 @@ namespace Spotify_Clone
             Thread.Sleep(3000);
             Console.Clear();
 
+            TypeWriter("Client.cs - SelectPlaylist() | TestPlaylist");
+            client.SelectPlaylist(1);
+            Thread.Sleep(3000);
+            Console.Clear();
+
             TypeWriter("Client.cs - AddSongToPlaylist() | TestPlaylist");
             client.AddSongToPlaylist(2);
             Console.Clear();
@@ -382,11 +387,6 @@ namespace Spotify_Clone
             client.AddSongToPlaylist(6);
             Console.Clear();
             client.AddSongToPlaylist(0);
-            Thread.Sleep(3000);
-            Console.Clear();
-
-            TypeWriter("Client.cs - SelectPlaylist() | TestPlaylist");
-            client.SelectPlaylist(1);
             Thread.Sleep(3000);
             Console.Clear();
 
