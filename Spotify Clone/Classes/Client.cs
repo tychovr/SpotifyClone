@@ -339,7 +339,7 @@ namespace Spotify_Clone
         {
             if (id < activeUser.Friends.Count)
             {
-                activeUser.AddFriend(allUsers[id]);
+                SelectedId = id;
 
                 Console.SetCursorPosition(5, 10);
                 Program.TypeWriter2("Selected friend: " + allUsers[id].Name);
