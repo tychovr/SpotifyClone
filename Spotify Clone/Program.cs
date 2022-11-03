@@ -342,14 +342,14 @@ namespace Spotify_Clone
             Thread.Sleep(1500);
             Console.Clear();
 
-            TypeWriter("Client.cs - Play() | Song");
-            allSongs[2].Play();
-            Thread.Sleep(3000);
-            Console.Clear();
-
             TypeWriter("Client.cs - AddSongToPlaylist() | Artist's album");
             TypeWriter2("This feature is not yet implemented");
             Thread.Sleep(1500);
+            Console.Clear();
+
+            TypeWriter("Client.cs - Play() | Song");
+            allSongs[2].Play();
+            Thread.Sleep(3000);
             Console.Clear();
 
             TypeWriter("Client.cs - ShowAllUsers() | Showcase");
