@@ -421,6 +421,11 @@ namespace Spotify_Clone
             client.AddFriend(1);
             Thread.Sleep(1);
             Console.Clear();
+
+            TypeWriter("Client.cs - ShowFriends() | Showcase");
+            client.ShowFriends();
+            Thread.Sleep(1);
+            Console.Clear();
         }
 
         // Explains every test in a cool and fast effect
