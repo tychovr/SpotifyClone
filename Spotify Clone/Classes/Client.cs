@@ -329,7 +329,7 @@ namespace Spotify_Clone
                 Console.SetCursorPosition(5, 10);
                 Program.TypeWriter2("Removed " + allSongs[id].Title + " from " + activeUser.Playlists[SelectedId].Title);
 
-                activeUser.Playlists[SelectedId].Remove(allSongs[id]);
+                activeUser.Playlists[SelectedId].Playables.Remove(allSongs[id]);
 
             }
             else
