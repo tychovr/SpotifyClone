@@ -4,6 +4,7 @@ using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Spectre.Console;
 
 namespace Spotify_Clone
@@ -305,6 +306,14 @@ namespace Spotify_Clone
                 Console.SetCursorPosition(5, 10);
                 Program.TypeWriter2("There is no song with that ID in " + activeUser.Person.Playlists[SelectedId].Title + "!");
             }
+        }
+
+        public void RemovePlaylist()
+        {
+            activeUser.RemovePlayList(SelectedId);
+
+            Console.SetCursorPosition(5, 10);
+            Program.TypeWriter2("Removed " + activeUser.Person.Playlists[SelectedId].Title + " playlist succesfully!");
         }
 
         public void ShowFriends()
