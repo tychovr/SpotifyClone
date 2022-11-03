@@ -385,9 +385,9 @@ namespace Spotify_Clone
 
         public void AddFriend(int id)
         {
-            if (id < activeUser.Friends.Count)
+            if (id < activeUser.Person.Friends.Count)
             {
-                if (activeUser.Friends.Find(x => x.Name == allUsers[id].Name) == null)
+                if (activeUser.Person.Friends.Find(x => x.Name == allUsers[id].Name) == null)
                 {
                     activeUser.AddFriend(allUsers[id]);
 
