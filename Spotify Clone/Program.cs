@@ -461,6 +461,48 @@ namespace Spotify_Clone
             allSongs[4].Stop();
             Thread.Sleep(3000);
             Console.Clear();
+
+            TypeWriter("Ending program test...");
+            Thread.Sleep(3000);
+            Console.Clear();
+
+            // Ending test animation
+            AnsiConsole.Progress()
+                .Columns(new ProgressColumn[]
+                {
+                    new TaskDescriptionColumn(),    // Task description
+                    new PercentageColumn(),         // Percentage
+                    new ProgressBarColumn(),        // Progress bar
+                    new RemainingTimeColumn(),      // Remaining time
+                    new SpinnerColumn(),            // Spinner
+                })
+            .Start(ctx =>
+            {
+                // Define tasks
+                var task1 = ctx.AddTask("[#FF0000]Stealing your cookies[/]");
+                var task2 = ctx.AddTask("[#FF7F00]Hacking into your device[/]");
+                var task3 = ctx.AddTask("[#FFFF00]Stealing login data[/]");
+                var task4 = ctx.AddTask("[#00FF00]Accessing device[/]");
+                var task5 = ctx.AddTask("[#0000FF]Installing virussus[/]");
+                var task6 = ctx.AddTask("[#2E2B5F]Deleting windows[/]");
+                var task7 = ctx.AddTask("[#8B00FF]Permanent shutdown[/]");
+
+
+                while (!ctx.IsFinished)
+                {
+                    task1.Increment(2);
+                    task2.Increment(1.9);
+                    task3.Increment(1.7);
+                    task4.Increment(1.5);
+                    task5.Increment(1.3);
+                    task6.Increment(1);
+                    task7.Increment(0.8);
+                    Thread.Sleep(60);
+                }
+            });
+
+            Console.Clear();
+            Environment.Exit(0);
         }
 
         // Explains every test in a cool and fast effect
