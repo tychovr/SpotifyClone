@@ -386,7 +386,7 @@ namespace Spotify_Clone
             Console.Clear();
 
             TypeWriter("Client.cs - SelectPlaylist() | Showcase");
-            client.SelectPlaylist(4);
+            client.SelectPlaylist(1);
             Thread.Sleep(1);
             Console.Clear();
 
