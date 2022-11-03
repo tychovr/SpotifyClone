@@ -456,6 +456,11 @@ namespace Spotify_Clone
             allSongs[4].Next();
             Thread.Sleep(3000);
             Console.Clear();
+
+            TypeWriter("Client.cs - Stop() | Song");
+            allSongs[4].Stop();
+            Thread.Sleep(3000);
+            Console.Clear();
         }
 
         // Explains every test in a cool and fast effect
