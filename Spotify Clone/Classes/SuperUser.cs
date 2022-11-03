@@ -49,7 +49,7 @@ namespace Spotify_Clone
 
         public void RemovePlayList(int id)
         {
-            Playlists.RemoveAt(id);
+            Person.Playlists.RemoveAt(id);
         }
 
         public void AddToPlayList(int selectedId, IPlayable playable)
