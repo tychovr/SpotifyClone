@@ -374,9 +374,13 @@ namespace Spotify_Clone
 
             TypeWriter("Client.cs - AddSongToPlaylist() | Showcase");
             client.AddSongToPlaylist(2);
+            Console.Clear();
             client.AddSongToPlaylist(4);
+            Console.Clear();
             client.AddSongToPlaylist(5);
+            Console.Clear();
             client.AddSongToPlaylist(6);
+            Console.Clear();
             client.AddSongToPlaylist(0);
             Thread.Sleep(1);
             Console.Clear();
