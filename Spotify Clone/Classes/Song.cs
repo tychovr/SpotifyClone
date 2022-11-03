@@ -43,6 +43,7 @@ namespace Spotify_Clone
 
         public void Play()
         {
+            Console.SetCursorPosition(5, 10);
             Program.TypeWriter2("Playing: " + Title);
         }
 
