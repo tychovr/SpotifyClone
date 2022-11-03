@@ -9,11 +9,9 @@ namespace Spotify_Clone
     internal class SongCollection : IPlayable
     {
         public string Title;
-        private int length;
         private List<IPlayable> playables = new List<IPlayable>();
 
         public List<IPlayable> Playables { get => playables; set => playables = value; }
-        int IPlayable.Length => length;
 
         public SongCollection(string title)
         {
@@ -79,7 +77,7 @@ namespace Spotify_Clone
             int length = 0;
             foreach (IPlayable playable in Playables)
             {
-                length += playable.Length;
+                length += playable.Length();
             }
             return length;
         }
