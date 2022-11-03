@@ -307,6 +307,8 @@ namespace Spotify_Clone
             Program program = new Program();
 
             // Start client tests
+            int counter = 0;
+
             TypeWriter("Client.cs - SetActiveUser() | Tycho");
             client.SetActiveUser(superUser);
             Thread.Sleep(3000);
@@ -340,6 +342,11 @@ namespace Spotify_Clone
             TypeWriter("Client.cs - Play() | Song");
             allSongs[2].Play();
             Thread.Sleep(3000);
+            Console.Clear();
+
+            TypeWriter("Client.cs - AddSongToPlaylist() | Friend's playlist");
+            TypeWriter2("This feature is not yet implemented");
+            Thread.Sleep(1500);
             Console.Clear();
 
             TypeWriter("Client.cs - ShowAllUsers() | Showcase");
