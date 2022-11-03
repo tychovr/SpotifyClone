@@ -393,6 +393,7 @@ namespace Spotify_Clone
 
             TypeWriter("Client.cs - RemoveFromPlaylist() | Showcase");
             client.RemoveFromPlaylist(2);
+            client.RemoveFromPlaylist(1);
             Thread.Sleep(3000);
             Console.Clear();
 
