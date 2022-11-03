@@ -307,8 +307,6 @@ namespace Spotify_Clone
             Program program = new Program();
 
             // Start client tests
-            int counter = 0;
-
             TypeWriter("Client.cs - SetActiveUser() | Tycho");
             client.SetActiveUser(superUser);
             Thread.Sleep(3000);
