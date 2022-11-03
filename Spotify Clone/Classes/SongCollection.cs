@@ -64,7 +64,6 @@ namespace Spotify_Clone
         {
             Console.WriteLine("Stopped playing: " + Title);
 
-            Thread.Sleep(3000);
             Console.Clear();
         }
 
