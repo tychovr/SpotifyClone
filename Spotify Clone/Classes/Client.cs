@@ -270,15 +270,16 @@ namespace Spotify_Clone
             int counter = 0;
 
             var table = new Table();
+            table.Title("[#0c0c0c].[/]");
             table.Border = TableBorder.Rounded;
 
-            table.AddColumn("ID");
-            table.AddColumn("Playlist Title");
-            table.AddColumn("Creator");
+            table.AddColumn("[#FF0000]ID[/]");
+            table.AddColumn("[#FF7f00]Playlist Title[/]");
+            table.AddColumn("[#FFFF00]Creator[/]");
 
             for (counter = 0; counter < activeUser.Playlists.Count; counter++)
             {
-                table.AddRow(counter.ToString(), activeUser.Playlists[counter].Title, activeUser.Name);
+                table.AddRow("[#FF0000]" + counter.ToString() + "[/]", "[#FF7F00]" + activeUser.Playlists[counter].Title + "[/]", "[#FFFF00]" + activeUser.Playlists[counter].Owner.Name + "[/]");
             }
 
             AnsiConsole.Write(table);
@@ -321,6 +322,7 @@ namespace Spotify_Clone
             int counter = 0;
 
             var table = new Table();
+            table.Title("[#0c0c0c].[/]");
             table.Border = TableBorder.Rounded;
 
             table.AddColumn("ID");
