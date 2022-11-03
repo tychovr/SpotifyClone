@@ -327,9 +327,9 @@ namespace Spotify_Clone
             if (id < activeUser.Person.Playlists[SelectedId].Playables.Count)
             {
                 Console.SetCursorPosition(5, 10);
-                Program.TypeWriter2("Removed " + allSongs[id].Title + " from " + activeUser.Playlists[SelectedId].Title);
+                Program.TypeWriter2("Removed " + allSongs[id].Title + " from " + activeUser.Person.Playlists[SelectedId].Title);
 
-                activeUser.Playlists[SelectedId].Playables.Remove(allSongs[id]);
+                activeUser.Person.Playlists[SelectedId].Playables.Remove(allSongs[id]);
 
             }
             else
