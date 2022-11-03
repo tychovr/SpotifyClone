@@ -235,10 +235,10 @@ namespace Spotify_Clone
             SuperUser SuperUser = new SuperUser("Tycho", tycho);
             Client client = new Client(SuperUser, allAlbums, allSongs, allUsers);
 
-            TestCode(client, SuperUser);
+            TestCode(client, SuperUser, allAlbums, allSongs, allUsers);
         }
 
-        public static void TestCode(Client client, SuperUser SuperUser)
+        public static void TestCode(Client client, SuperUser SuperUser, List<Album> AllAlbums, List<Song> AllSongs, List<Person> AllUsers)
         {
             // Loading test animation
             AnsiConsole.Progress()
@@ -318,7 +318,7 @@ namespace Spotify_Clone
             Console.Clear();
 
             TypeWriter("Client.cs - Play() | Album");
-            client.Play();
+            client.allAlbums[0].Play();
             Thread.Sleep(5000);
             Console.Clear();
 
