@@ -14,6 +14,7 @@ namespace Spotify_Clone
         public IPlayable CurrentlyPlaying;
         public int CurrentTime;
         public int SelectedId;
+        public int SelectedUser = -1;
         public bool Playing;
         public bool Shuffle;
         public bool Repeat;
@@ -124,6 +125,43 @@ namespace Spotify_Clone
 
         public void ShowUserPlaylists()
         {
+            if (SelectedUser < 0)
+            {
+                int Counter1 = 0;
+
+                var Table1 = new Table().Centered();
+                Table1.Border(TableBorder.HeavyEdge);
+
+                Table1.Title("[#0c0c0c].[/]");
+                Table1.Border(TableBorder.HeavyEdge);
+                Table1.AddColumns("[#FF0000]ID[/]", "[#FF7F00]Name[/]", "[#FFFF00]Songs[/]");
+
+                foreach (var playlist in ActiveUser.Person.Playlists)
+                {
+                    Table1.AddRow("[#FF0000]" + Counter1.ToString() + "[/]", "[#FF7F00]" + playlist.Title + "[/]", "[#FFFF00]" + playlist.Playables.Count() + "[/]");
+                    Counter1++;
+                }
+
+                AnsiConsole.Write(Table1);
+            }
+            else
+            {
+                int Counter2 = 0;
+
+                var Table2 = new Table().Centered();
+
+                Table2.Title("[#0c0c0c].[/]");
+                Table2.Border(TableBorder.HeavyEdge);
+                Table2.AddColumns("[#FF0000]ID[/]", "[#FF7F00]Name[/]", "[#FFFF00]Songs[/]");
+
+                foreach (var playlist in allUsers[SelectedUser].Playlists)
+                {
+                    Table2.AddRow("[#FF0000]" + Counter2.ToString() + "[/]", "[#FF7F00]" + playlist.Title + "[/]", "[#FFFF00]" + playlist.Playables.Count() + "[/]");
+                    Counter2++;
+                }
+
+                AnsiConsole.Write(Table2);
+            }
             int Counter = 0;
 
             var Table = new Table().Centered();
