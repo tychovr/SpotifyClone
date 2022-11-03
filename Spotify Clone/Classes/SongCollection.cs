@@ -77,7 +77,7 @@ namespace Spotify_Clone
             int length = 0;
             foreach (IPlayable playable in Playables)
             {
-                length += playable.Length();
+                length += playable.Length;
             }
             return length;
         }
