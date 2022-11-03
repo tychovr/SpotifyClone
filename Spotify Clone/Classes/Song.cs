@@ -36,19 +36,19 @@ namespace Spotify_Clone
             Play();
         }
 
-        public string Pause()
+        public void Pause()
         {
-            return "Paused: " + Title;
+            Program.TypeWriter2("Pausing: " + Title);
         }
 
-        public string Play()
+        public void Play()
         {
-            return "Playing: " + Title;
+            Program.TypeWriter2("Playing: " + Title);
         }
 
-        public string Stop()
+        public void Stop()
         {
-            return "Stopped playing: " + Title;
+            Program.TypeWriter2("Stopped playing: " + Title);
         }
 
         public override string ToString()
