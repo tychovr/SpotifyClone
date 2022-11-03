@@ -11,19 +11,15 @@ namespace Spotify_Clone
 {
     internal class Client
     {
-        public IPlayable CurrentlyPlaying;
-        public int CurrentTime;
         public int SelectedId;
         public int SelectedUser = -1;
-        public bool Playing;
         public bool Shuffle;
         public bool Repeat;
-        private SuperUser activeUser;
-        private List<Album> allAlbums = new List<Album>();
-        private List<Song> allSongs = new List<Song>();
-        private List<Person> allUsers = new List<Person>();
+        readonly List<Album> allAlbums = new List<Album>();
+        readonly List<Song> allSongs = new List<Song>();
+        readonly List<Person> allUsers = new List<Person>();
 
-        public SuperUser ActiveUser { get => activeUser; set => activeUser = value; }
+        public SuperUser ActiveUser { get; set; }
 
         public Client()
         {
@@ -59,7 +55,7 @@ namespace Spotify_Clone
                 Counter++;
             }
 
-            AnsiConsole.Render(Table);
+            AnsiConsole.Write(Table);
         }
 
         public void SelectAlbum(int id)
@@ -80,11 +76,11 @@ namespace Spotify_Clone
             Table.AddColumns("[#FF0000]ID[/]", "[#FF7F00]Title[/]", "[#FFFF00]Artists[/]", "[#00FF00]Genre[/]", "[#0000FF]Duration[/]");
             foreach (var song in allSongs)
             {
-                Table.AddRow("[#FF0000]" + Counter.ToString() + "[/]", "[#FF7F00]" + song.Title + "[/]", "[#FFFF00]" + song.Artists.Count() + "[/]", "[#00FF00]" + song.SongGenre + "[/]", "[#0000FF]" + song.Length() + " seconds[/]");
+                Table.AddRow("[#FF0000]" + Counter.ToString() + "[/]", "[#FF7F00]" + song.Title + "[/]", "[#FFFF00]" + song.Artists.Count + "[/]", "[#00FF00]" + song.SongGenre + "[/]", "[#0000FF]" + song.Length() + " seconds[/]");
                 Counter++;
             }
 
-            AnsiConsole.Render(Table);
+            AnsiConsole.Write(Table);
         }
 
         public void SelectSong(int id)
@@ -111,19 +107,17 @@ namespace Spotify_Clone
             Table.AddColumns("[#FF0000]ID[/]", "[#FF7F00]Name[/]", "[#FFFF00]Friends[/]", "[#00FF00]Playlists[/]");
             foreach (var person in allUsers)
             {
-                Table.AddRow("[#FF0000]" + Counter.ToString() + "[/]", "[#FF7F00]" + person.Name + "[/]", "[#FFFF00]" + person.Friends.Count() + "[/]", "[#00FF00]" + person.Playlists.Count() + "[/]");
+                Table.AddRow("[#FF0000]" + Counter.ToString() + "[/]", "[#FF7F00]" + person.Name + "[/]", "[#FFFF00]" + person.Friends.Count + "[/]", "[#00FF00]" + person.Playlists.Count + "[/]");
                 Counter++;
             }
 
-            AnsiConsole.Render(Table);
+            AnsiConsole.Write(Table);
         }
 
         public void SelectUser(int id)
         {
-            Person SelectedUser = allUsers[id];
-
             Console.SetCursorPosition(5, 10);
-            Program.TypeWriter2("Selected user: " + SelectedUser.Name);
+            Program.TypeWriter2("Selected user: " + allUsers[id].Name);
         }
 
         public void ShowUserPlaylists()
@@ -141,7 +135,7 @@ namespace Spotify_Clone
 
                 foreach (var playlist in ActiveUser.Person.Playlists)
                 {
-                    Table1.AddRow("[#FF0000]" + Counter1.ToString() + "[/]", "[#FF7F00]" + playlist.Title + "[/]", "[#FFFF00]" + playlist.Playables.Count() + "[/]");
+                    Table1.AddRow("[#FF0000]" + Counter1.ToString() + "[/]", "[#FF7F00]" + playlist.Title + "[/]", "[#FFFF00]" + playlist.Playables.Count + "[/]");
                     Counter1++;
                 }
 
@@ -160,7 +154,7 @@ namespace Spotify_Clone
 
                 foreach (var playlist in allUsers[SelectedUser].Playlists)
                 {
-                    Table2.AddRow("[#FF0000]" + Counter2.ToString() + "[/]", "[#FF7F00]" + playlist.Title + "[/]", "[#FFFF00]" + playlist.Playables.Count() + "[/]");
+                    Table2.AddRow("[#FF0000]" + Counter2.ToString() + "[/]", "[#FF7F00]" + playlist.Title + "[/]", "[#FFFF00]" + playlist.Playables.Count + "[/]");
                     Counter2++;
                 }
 
@@ -176,43 +170,28 @@ namespace Spotify_Clone
             Program.TypeWriter2("Selected playlist: " + SelectedPlaylist.Title + " by " + SelectedPlaylist.Owner.Name);
         }
 
-        // Plays the selected song
+        // Plays the selected song [not working]
         public void Play()
         {
-            if (CurrentlyPlaying != null)
-            {
-                Playing = true;
-                CurrentlyPlaying.Play();
-            }
+            allSongs[2].Play();
         }
 
-        // Pauses the current song
+        // Pauses the current song [not working]
         public void Pause()
         {
-            if (CurrentlyPlaying != null)
-            {
-                Playing = false;
-                CurrentlyPlaying.Pause();
-            }
+            allSongs[2].Pause();
         }
 
-        // Stops the current song
+        // Stops the current song [not working]
         public void Stop()
         {
-            if (CurrentlyPlaying != null)
-            {
-                Playing = false;
-                CurrentlyPlaying.Stop();
-            }
+            allSongs[2].Stop();
         }
 
-        // Plays the next song in the queue
+        // Plays the next song in the queue [not working]
         public void NextSong()
         {
-            if (CurrentlyPlaying != null)
-            {
-                CurrentlyPlaying.Next();
-            }
+            allSongs[2].Next();
         }
 
         // Toggles the shuffle mode
@@ -252,7 +231,7 @@ namespace Spotify_Clone
         // Creates an empty playlist and binds it to active user
         public void CreatePlaylist(string name)
         {
-            activeUser.CreatePlayList(name);
+            ActiveUser.CreatePlayList(name);
 
             Console.SetCursorPosition(5, 10);
             Program.TypeWriter2("Created " + name + " playlist succesfully!");
@@ -271,9 +250,9 @@ namespace Spotify_Clone
             table.AddColumn("[#FF7f00]Playlist Title[/]");
             table.AddColumn("[#FFFF00]Creator[/]");
 
-            for (counter = 0; counter < activeUser.Playlists.Count; counter++)
+            for (counter = 0; counter < ActiveUser.Playlists.Count; counter++)
             {
-                table.AddRow("[#FF0000]" + counter.ToString() + "[/]", "[#FF7F00]" + activeUser.Playlists[counter].Title + "[/]", "[#FFFF00]" + activeUser.Playlists[counter].Owner.Name + "[/]");
+                table.AddRow("[#FF0000]" + counter.ToString() + "[/]", "[#FF7F00]" + ActiveUser.Playlists[counter].Title + "[/]", "[#FFFF00]" + ActiveUser.Playlists[counter].Owner.Name + "[/]");
             }
 
             AnsiConsole.Write(table);
@@ -285,18 +264,18 @@ namespace Spotify_Clone
             SelectedId = id;
 
             Console.SetCursorPosition(5, 10);
-            Program.TypeWriter2("Selected playlist: " + activeUser.Person.Playlists[id].Title);
+            Program.TypeWriter2("Selected playlist: " + ActiveUser.Person.Playlists[id].Title);
         }
 
         // This method is not in use as of now
         public void RemovePlaylists(int id)
         {
-            if (id < activeUser.Person.Playlists.Count)
+            if (id < ActiveUser.Person.Playlists.Count)
             {
                 Console.SetCursorPosition(5, 10);
-                Program.TypeWriter2("Removed " + activeUser.Person.Playlists[id].Title + " from " + activeUser.Name + "'s playlists");
+                Program.TypeWriter2("Removed " + ActiveUser.Person.Playlists[id].Title + " from " + ActiveUser.Name + "'s playlists");
 
-                activeUser.RemovePlayList(id);
+                ActiveUser.RemovePlayList(id);
             }
             else
             {
@@ -308,10 +287,10 @@ namespace Spotify_Clone
         // Adds the selected song to the selected playlist
         public void AddSongToPlaylist(int id)
         {
-            activeUser.Person.Playlists[SelectedId].Playables.Add(allSongs[id]);
+            ActiveUser.Person.Playlists[SelectedId].Playables.Add(allSongs[id]);
 
             Console.SetCursorPosition(5, 10);
-            Program.TypeWriter2("Added: " + allSongs[id].Title + " to " + activeUser.Person.Playlists[SelectedId].Title);
+            Program.TypeWriter2("Added: " + allSongs[id].Title + " to " + ActiveUser.Person.Playlists[SelectedId].Title);
         }
 
         // Shows all songs in the selected playlist
@@ -326,7 +305,7 @@ namespace Spotify_Clone
             table.AddColumn("[#FF0000]ID[/]");
             table.AddColumn("[#FF7F00]Song Title[/]");
 
-            foreach (var playable in activeUser.Person.Playlists[SelectedId].Playables)
+            foreach (var playable in ActiveUser.Person.Playlists[SelectedId].Playables)
             {
                 table.AddRow("[#FF0000]" + counter.ToString() + "[/]", "[#FF7F00]" + playable.ToString() + "[/]");
                 counter++;
@@ -338,17 +317,17 @@ namespace Spotify_Clone
         // Removes song from selected playlist
         public void RemoveFromPlaylist(int id)
         {
-            if (id < activeUser.Person.Playlists[SelectedId].Playables.Count)
+            if (id < ActiveUser.Person.Playlists[SelectedId].Playables.Count)
             {
                 Console.SetCursorPosition(5, 10);
-                Program.TypeWriter2("Removed " + allSongs[id].Title + " from " + activeUser.Person.Playlists[SelectedId].Title);
+                Program.TypeWriter2("Removed " + allSongs[id].Title + " from " + ActiveUser.Person.Playlists[SelectedId].Title);
 
-                activeUser.RemoveFromPlayList(SelectedId, activeUser.Person.Playlists[SelectedId].Playables[id]);
+                ActiveUser.RemoveFromPlayList(SelectedId, ActiveUser.Person.Playlists[SelectedId].Playables[id]);
             }
             else
             {
                 Console.SetCursorPosition(5, 10);
-                Program.TypeWriter2("There is no song with that ID in " + activeUser.Person.Playlists[SelectedId].Title + "!");
+                Program.TypeWriter2("There is no song with that ID in " + ActiveUser.Person.Playlists[SelectedId].Title + "!");
             }
         }
 
@@ -356,9 +335,9 @@ namespace Spotify_Clone
         public void RemovePlaylist()
         {
             Console.SetCursorPosition(5, 10);
-            Program.TypeWriter2("Removed " + activeUser.Person.Playlists[SelectedId].Title + " playlist succesfully!");
+            Program.TypeWriter2("Removed " + ActiveUser.Person.Playlists[SelectedId].Title + " playlist succesfully!");
 
-            activeUser.RemovePlayList(SelectedId);
+            ActiveUser.RemovePlayList(SelectedId);
         }
 
         // Shows all friends from the active user
@@ -373,7 +352,7 @@ namespace Spotify_Clone
             table.AddColumn("[#FF0000]ID[/]");
             table.AddColumn("[#FF7F00]Friend Name[/]");
 
-            foreach (var friend in activeUser.Person.Friends)
+            foreach (var friend in ActiveUser.Person.Friends)
             {
                 table.AddRow("[#FF0000]" + counter.ToString() + "[/]", "[#FF7F00]" + friend.Name + "[/]");
                 counter++;
@@ -385,7 +364,7 @@ namespace Spotify_Clone
         // Selects friend from allUsers with id
         public void SelectFriend(int id)
         {
-            if (id < activeUser.Person.Friends.Count)
+            if (id < ActiveUser.Person.Friends.Count)
             {
                 SelectedId = id;
 
@@ -402,11 +381,11 @@ namespace Spotify_Clone
         // Adds selected user to active user's friends list
         public void AddFriend(int id)
         {
-            if (id < activeUser.Person.Friends.Count)
+            if (id < ActiveUser.Person.Friends.Count)
             {
-                if (activeUser.Person.Friends.Find(x => x.Name == allUsers[id].Name) == null)
+                if (ActiveUser.Person.Friends.Find(x => x.Name == allUsers[id].Name) == null)
                 {
-                    activeUser.AddFriend(allUsers[id]);
+                    ActiveUser.AddFriend(allUsers[id]);
 
                     Console.SetCursorPosition(5, 10);
                     Program.TypeWriter2("Added " + allUsers[id].Name + " as a friend!");
@@ -427,12 +406,12 @@ namespace Spotify_Clone
         // Removes selected friend from active user's friends list
         public void RemoveFriend(int id)
         {
-            if (id < activeUser.Person.Friends.Count)
+            if (id < ActiveUser.Person.Friends.Count)
             {
                 Console.SetCursorPosition(5, 10);
                 Program.TypeWriter2("Removed " + allUsers[id].Name + " as a friend!");
 
-                activeUser.RemoveFriend(allUsers[id]);
+                ActiveUser.RemoveFriend(allUsers[id]);
 
             }
             else
