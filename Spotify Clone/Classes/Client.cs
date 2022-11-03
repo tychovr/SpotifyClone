@@ -358,7 +358,7 @@ namespace Spotify_Clone
             table.AddColumn("[#FF0000]ID[/]");
             table.AddColumn("[#FF7F00]Friend Name[/]");
 
-            foreach (var friend in activeUser.Friends)
+            foreach (var friend in activeUser.Person.Friends)
             {
                 table.AddRow("[#FF0000]" + counter.ToString() + "[/]", "[#FF7F00]" + friend.Name + "[/]");
                 counter++;
