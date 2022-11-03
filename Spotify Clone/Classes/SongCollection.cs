@@ -45,7 +45,6 @@ namespace Spotify_Clone
                 {
                     playable.Play();
 
-                    Thread.Sleep(3000);
                     Console.Clear();
                 }
             }
