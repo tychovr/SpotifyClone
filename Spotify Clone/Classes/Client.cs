@@ -306,7 +306,7 @@ namespace Spotify_Clone
         {
             int counter = 0;
 
-            var table = new Table();
+            var table = new Table().Centered();
 
             table.Title("[#0c0c0c].[/]");
             table.Border = TableBorder.Rounded;
