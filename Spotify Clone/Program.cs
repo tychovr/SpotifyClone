@@ -442,11 +442,6 @@ namespace Spotify_Clone
             Thread.Sleep(3000);
             Console.Clear();
 
-            TypeWriter("Client.cs - SetShuffle() | Showcase");
-            client.SetShuffle();
-            Thread.Sleep(3000);
-            Console.Clear();
-
             TypeWriter("Client.cs - Play() | Song");
             allSongs[4].Play();
             Thread.Sleep(3000);
