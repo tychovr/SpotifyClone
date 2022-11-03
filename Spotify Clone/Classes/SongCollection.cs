@@ -28,6 +28,7 @@ namespace Spotify_Clone
             return Playables;
         }
 
+        // Plays the song
         public void Play()
         {
             Client client = new Client();
@@ -50,16 +51,19 @@ namespace Spotify_Clone
             }
         }
 
+        // Pauses the song
         public void Pause()
         {
             Console.WriteLine("Pausing: " + Title);
         }
 
+        // Plays the next song in queue
         public void Next()
         {
             Play();
         }
 
+        // Stops the song
         public void Stop()
         {
             Console.WriteLine("Stopped playing: " + Title);
@@ -67,6 +71,7 @@ namespace Spotify_Clone
             Console.Clear();
         }
 
+        // Gets the length of the song
         public int Length()
         {
             int length = 0;

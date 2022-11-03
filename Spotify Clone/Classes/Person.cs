@@ -20,16 +20,19 @@ namespace Spotify_Clone
             Name = name;
         }
 
+        // Shows the user's friend list
         public List<Person> ShowFriends()
         {
             return Friends;
         }
 
+        // Shows the user's playlist list
         public List<Playlist> ShowPlaylists()
         {
             return Playlists;
         }
 
+        // Selects a playlist from the user's playlist list
         public Playlist SelectPlaylist(int id)
         {
             return Playlists[id];

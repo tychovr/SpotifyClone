@@ -26,28 +26,33 @@ namespace Spotify_Clone
             Duration = duration;
         }
 
+        // Gets the length of the song
         public int Length()
         {
             return Duration;
         }
 
+        // Plays the next song
         public void Next()
         {
             Play();
         }
 
+        // Pauses the song
         public void Pause()
         {
             Console.SetCursorPosition(5, 10);
             Program.TypeWriter2("Pausing: " + Title);
         }
 
+        // Plays the song
         public void Play()
         {
             Console.SetCursorPosition(5, 10);
             Program.TypeWriter2("Playing: " + Title);
         }
 
+        // Stops the song
         public void Stop()
         {
             Console.SetCursorPosition(5, 10);

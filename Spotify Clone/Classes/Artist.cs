@@ -18,11 +18,13 @@ namespace Spotify_Clone
             Name = name;
         }
 
+        // Adds a song to artist
         public void AddSong(Song song)
         {
             Songs.Add(song);
         }
 
+        // Adds an album to artist
         public void AddAlbum(Album album)
         {
             Albums.Add(album);

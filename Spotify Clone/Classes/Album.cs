@@ -27,11 +27,13 @@ namespace Spotify_Clone
             }
         }
 
+        // Adds song to the album
         public void AddSong(Song song)
         {
             Songs.Add(song);
         }
 
+        // Adds album to allAlbums
         public void AddAlbum(Album album)
         {
             Albums.Add(album);

@@ -7,8 +7,6 @@ namespace Spotify_Clone
     {
         static void Main(string[] args)
         {
-            Console.SetWindowSize(159, 35);
-            Console.SetBufferSize(159, 35);
             Console.Title = "Spotify Clone";
 
             // Create new User classes
@@ -35,108 +33,27 @@ namespace Spotify_Clone
             Artist theDarkHorror = new Artist(new List<Album>(), "The Dark Horror");
             Artist endymion = new Artist(new List<Album>(), "Endymion");
 
-            // Create lists with artists for albums
-            List<Artist> artistCollecion1 = new List<Artist>();
-            artistCollecion1.Add(subZeroProject);
-
-            List<Artist> artistCollecion2 = new List<Artist>();
-            artistCollecion2.Add(daTweekaz);
-
-            List<Artist> artistCollecion3 = new List<Artist>();
-            artistCollecion3.Add(headhunterz);
-
-            List<Artist> artistCollecion4 = new List<Artist>();
-            artistCollecion4.Add(rebelion);
-
-            // Create lists with artists for songs
-            List<Artist> artists1 = new List<Artist>();
-            artists1.Add(subZeroProject);
-            artists1.Add(dbstf);
-
-            List<Artist> artists2 = new List<Artist>();
-            artists2.Add(subZeroProject);
-            artists2.Add(villain);
-
-            List<Artist> artists3 = new List<Artist>();
-            artists3.Add(subZeroProject);
-
-            List<Artist> artists5 = new List<Artist>();
-            artists5.Add(daTweekaz);
-            artists5.Add(hardDriver);
-            artists5.Add(coone);
-
-            List<Artist> artists7 = new List<Artist>();
-            artists7.Add(headhunterz);
-            artists7.Add(soundrush);
-            artists7.Add(eurille);
-
-            List<Artist> artists8 = new List<Artist>();
-            artists8.Add(headhunterz);
-            artists8.Add(wildstylez);
-            artists8.Add(noisecontrollers);
-
-            List<Artist> artists9 = new List<Artist>();
-            artists9.Add(rebelion);
-            artists9.Add(micahMargin);
-
-            List<Artist> artists10 = new List<Artist>();
-            artists10.Add(rebelion);
-            artists10.Add(dimitriK);
-            artists10.Add(theDarkHorror);
-
-            List<Artist> artists11 = new List<Artist>();
-            artists11.Add(rebelion);
-            artists11.Add(endymion);
-
-            List<Artist> artists12 = new List<Artist>();
-            artists12.Add(rebelion);
-
             // Create new Song classes
-            Song darkestHourTheClock = new Song("Darkest Hour (The Clock)", artists1, Genre.Hardstyle, 1, 241);
-            Song theSolution = new Song("The Solution", artists2, Genre.Hardstyle, 2, 201);
-            Song rennaisanceOfRave = new Song("Renaissance of Rave", artists3, Genre.Hardstyle, 3, 197);
-            Song tripToMarsAstronauts = new Song("Trip To Mars (Astronauts)", artists3, Genre.Hardstyle, 4, 182);
-            Song edgeOfTheUnknown = new Song("Edge of the Unknown", artists5, Genre.Hardstyle, 5, 258);
-            Song byTheSword = new Song("By The Sword", artists5, Genre.Hardstyle, 6, 216);
-            Song rescueMe = new Song("Rescue Me", artists7, Genre.Hardstyle, 7, 256);
-            Song noOneCanStopUsNow = new Song("No One Can Stop Us Now", artists8, Genre.Hardstyle, 8, 169);
-            Song aI = new Song("A.I.", artists9, Genre.Rawstyle, 9, 399);
-            Song sideFxs = new Song("Sided Fx's", artists10, Genre.Terrorcore, 10, 186);
-            Song dieGladiator = new Song("Die Gladiator", artists11, Genre.Hardcore, 11, 89);
-            Song outtaControl = new Song("Outta Control", artists12, Genre.Terrorcore, 12, 189);
-
-            // Create lists with songs for albums
-            List<Song> contagionCollection = new List<Song>();
-            contagionCollection.Add(darkestHourTheClock);
-            contagionCollection.Add(theSolution);
-
-            List<Song> rennaisanceOfRaveCollecion = new List<Song>();
-            rennaisanceOfRaveCollecion.Add(rennaisanceOfRave);
-            rennaisanceOfRaveCollecion.Add(tripToMarsAstronauts);
-
-            List<Song> legendsOfTheEliteCollection = new List<Song>();
-            legendsOfTheEliteCollection.Add(edgeOfTheUnknown);
-            legendsOfTheEliteCollection.Add(byTheSword);
-
-            List<Song> theReturnOfHeadhunterzCollection = new List<Song>();
-            theReturnOfHeadhunterzCollection.Add(rescueMe);
-            theReturnOfHeadhunterzCollection.Add(noOneCanStopUsNow);
-
-            List<Song> artificalIntoxicationCollecion = new List<Song>();
-            artificalIntoxicationCollecion.Add(aI);
-            artificalIntoxicationCollecion.Add(sideFxs);
-
-            List<Song> theFirstDoseCollecion = new List<Song>();
-            theFirstDoseCollecion.Add(dieGladiator);
-            theFirstDoseCollecion.Add(outtaControl);
+            Song darkestHourTheClock = new Song("Darkest Hour (The Clock)", new List<Artist> { subZeroProject, dbstf }, Genre.Hardstyle, 1, 241);
+            Song theSolution = new Song("The Solution", new List<Artist> { subZeroProject, villain }, Genre.Hardstyle, 2, 201);
+            Song rennaisanceOfRave = new Song("Renaissance of Rave", new List<Artist> { subZeroProject }, Genre.Hardstyle, 3, 197);
+            Song tripToMarsAstronauts = new Song("Trip To Mars (Astronauts)", new List<Artist> { subZeroProject }, Genre.Hardstyle, 4, 182);
+            Song edgeOfTheUnknown = new Song("Edge of the Unknown", new List<Artist> { daTweekaz, hardDriver, coone }, Genre.Hardstyle, 5, 258);
+            Song byTheSword = new Song("By The Sword", new List<Artist> { daTweekaz, hardDriver, coone }, Genre.Hardstyle, 6, 216);
+            Song rescueMe = new Song("Rescue Me", new List<Artist> { headhunterz, soundrush, eurille }, Genre.Hardstyle, 7, 256);
+            Song noOneCanStopUsNow = new Song("No One Can Stop Us Now", new List<Artist> { headhunterz, wildstylez, noisecontrollers }, Genre.Hardstyle, 8, 169);
+            Song aI = new Song("A.I.", new List<Artist> { rebelion, micahMargin }, Genre.Rawstyle, 9, 399);
+            Song sideFxs = new Song("Sided Fx's", new List<Artist> { rebelion, dimitriK, theDarkHorror }, Genre.Terrorcore, 10, 186);
+            Song dieGladiator = new Song("Die Gladiator", new List<Artist> { rebelion, endymion }, Genre.Hardcore, 11, 89);
+            Song outtaControl = new Song("Outta Control", new List<Artist> { rebelion }, Genre.Terrorcore, 12, 189);
 
             // Create new Album classes
-            Album albumContagion = new Album(artistCollecion1, "Contagion", contagionCollection);
-            Album albumRennaisanceOfRave = new Album(artistCollecion1, "Rennaisance Of Rave", rennaisanceOfRaveCollecion);
-            Album albumLegendsOfTheElite = new Album(artistCollecion2, "Legends Of The Elite", legendsOfTheEliteCollection);
-            Album albumTheReturnOfHeadhunterz = new Album(artistCollecion3, "The Return Of Headhunterz", theReturnOfHeadhunterzCollection);
-            Album albumArtificalIntoxication = new Album(artistCollecion4, "Artifical Intoxication", artificalIntoxicationCollecion);
-            Album albumTheFirstDose = new Album(artistCollecion4, "The First Dose", theFirstDoseCollecion);
+            Album albumContagion = new Album(new List<Artist> { subZeroProject }, "Contagion", new List<Song> { darkestHourTheClock, theSolution });
+            Album albumRennaisanceOfRave = new Album(new List<Artist> { subZeroProject }, "Rennaisance Of Rave", new List<Song> { rennaisanceOfRave, tripToMarsAstronauts });
+            Album albumLegendsOfTheElite = new Album(new List<Artist> { daTweekaz }, "Legends Of The Elite", new List<Song> { edgeOfTheUnknown, byTheSword });
+            Album albumTheReturnOfHeadhunterz = new Album(new List<Artist> { headhunterz }, "The Return Of Headhunterz", new List<Song> { rescueMe, noOneCanStopUsNow });
+            Album albumArtificalIntoxication = new Album(new List<Artist> { rebelion }, "Artifical Intoxication", new List<Song> { aI, sideFxs });
+            Album albumTheFirstDose = new Album(new List<Artist> { rebelion }, "The First Dose", new List<Song> { dieGladiator, outtaControl });
 
             // Add albums to artists
             subZeroProject.AddAlbum(albumContagion);
@@ -202,34 +119,10 @@ namespace Spotify_Clone
             fabian.Friends.Add(luuk);
 
             // Add all data to lists
-            List<Person> allUsers = new List<Person>();
-            List<Album> allAlbums = new List<Album>();
-            List<Song> allSongs = new List<Song>();
+            List<Person> allUsers = new List<Person> { tycho, luuk, kyara, fabian };
+            List<Album> allAlbums = new List<Album> { albumContagion, albumRennaisanceOfRave, albumLegendsOfTheElite, albumTheReturnOfHeadhunterz, albumArtificalIntoxication, albumTheFirstDose };
+            List<Song> allSongs = new List<Song> { darkestHourTheClock, theSolution, rennaisanceOfRave, tripToMarsAstronauts, edgeOfTheUnknown, byTheSword, rescueMe, noOneCanStopUsNow, aI, sideFxs, dieGladiator, outtaControl };
 
-            allUsers.Add(tycho);
-            allUsers.Add(luuk);
-            allUsers.Add(kyara);
-            allUsers.Add(fabian);
-
-            allAlbums.Add(albumContagion);
-            allAlbums.Add(albumRennaisanceOfRave);
-            allAlbums.Add(albumLegendsOfTheElite);
-            allAlbums.Add(albumTheReturnOfHeadhunterz);
-            allAlbums.Add(albumArtificalIntoxication);
-            allAlbums.Add(albumTheFirstDose);
-
-            allSongs.Add(darkestHourTheClock);
-            allSongs.Add(theSolution);
-            allSongs.Add(rennaisanceOfRave);
-            allSongs.Add(tripToMarsAstronauts);
-            allSongs.Add(edgeOfTheUnknown);
-            allSongs.Add(byTheSword);
-            allSongs.Add(rescueMe);
-            allSongs.Add(noOneCanStopUsNow);
-            allSongs.Add(aI);
-            allSongs.Add(sideFxs);
-            allSongs.Add(dieGladiator);
-            allSongs.Add(outtaControl);
 
             // Start TestCode()
             SuperUser SuperUser = new SuperUser("Tycho", tycho);
@@ -303,8 +196,6 @@ namespace Spotify_Clone
 
             Thread.Sleep(69);
             Console.Clear();
-
-            Program program = new Program();
 
             // Start client tests
             TypeWriter("Client.cs - SetActiveUser() | Tycho");

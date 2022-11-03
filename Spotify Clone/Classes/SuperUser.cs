@@ -31,32 +31,38 @@ namespace Spotify_Clone
             Person = person;
         }
 
+        // Adds fried to the user's friend list
         public void AddFriend(Person person)
         {
             Person.Friends.Add(person);
         }
 
+        // Removes friend from the user's friend list
         public void RemoveFriend(Person person)
         {
             Person.Friends.Remove(person);
         }
 
+        // Creates an empty playlist with title
         public void CreatePlayList(string name)
         {
             Playlist playlist = new Playlist(person, name);
             Person.Playlists.Add(playlist);
         }
 
+        // Removes playlist from the user's playlist list
         public void RemovePlayList(int id)
         {
             Person.Playlists.RemoveAt(id);
         }
 
+        // Adds the selected IPlayable to the selected playlist
         public void AddToPlayList(int selectedId, IPlayable playable)
         {
             Person.Playlists[selectedId].Add(playable);
         }
 
+        // Removes the selected IPlayable from the selected playlist
         public void RemoveFromPlayList(int selectedId, IPlayable playable)
         {
             Person.Playlists[selectedId].Playables.Remove(playable);

@@ -176,6 +176,7 @@ namespace Spotify_Clone
             Program.TypeWriter2("Selected playlist: " + SelectedPlaylist.Title + " by " + SelectedPlaylist.Owner.Name);
         }
 
+        // Plays the selected song
         public void Play()
         {
             if (CurrentlyPlaying != null)
@@ -185,6 +186,7 @@ namespace Spotify_Clone
             }
         }
 
+        // Pauses the current song
         public void Pause()
         {
             if (CurrentlyPlaying != null)
@@ -194,6 +196,7 @@ namespace Spotify_Clone
             }
         }
 
+        // Stops the current song
         public void Stop()
         {
             if (CurrentlyPlaying != null)
@@ -203,6 +206,7 @@ namespace Spotify_Clone
             }
         }
 
+        // Plays the next song in the queue
         public void NextSong()
         {
             if (CurrentlyPlaying != null)
@@ -211,6 +215,7 @@ namespace Spotify_Clone
             }
         }
 
+        // Toggles the shuffle mode
         public void SetShuffle()
         {
             Shuffle = !Shuffle;
@@ -227,6 +232,7 @@ namespace Spotify_Clone
             }
         }
 
+        // Toggles the repeat mode
         public void SetRepeat()
         {
             Repeat = !Repeat;
@@ -243,6 +249,7 @@ namespace Spotify_Clone
             }
         }
 
+        // Creates an empty playlist and binds it to active user
         public void CreatePlaylist(string name)
         {
             activeUser.CreatePlayList(name);
@@ -251,6 +258,7 @@ namespace Spotify_Clone
             Program.TypeWriter2("Created " + name + " playlist succesfully!");
         }
 
+        // Shows all playlists of the active user
         public void ShowPlaylists()
         {
             int counter = 0;
@@ -271,6 +279,7 @@ namespace Spotify_Clone
             AnsiConsole.Write(table);
         }
 
+        // Selects a playlist from the active user's playlists
         public void SelectPlaylist(int id)
         {
             SelectedId = id;
@@ -279,6 +288,7 @@ namespace Spotify_Clone
             Program.TypeWriter2("Selected playlist: " + activeUser.Person.Playlists[id].Title);
         }
 
+        // This method is not in use as of now
         public void RemovePlaylists(int id)
         {
             if (id < activeUser.Person.Playlists.Count)
@@ -295,6 +305,7 @@ namespace Spotify_Clone
             }
         }
 
+        // Adds the selected song to the selected playlist
         public void AddSongToPlaylist(int id)
         {
             activeUser.Person.Playlists[SelectedId].Playables.Add(allSongs[id]);
@@ -303,6 +314,7 @@ namespace Spotify_Clone
             Program.TypeWriter2("Added: " + allSongs[id].Title + " to " + activeUser.Person.Playlists[SelectedId].Title);
         }
 
+        // Shows all songs in the selected playlist
         public void ShowSongsInPlaylist()
         {
             int counter = 0;
@@ -323,6 +335,7 @@ namespace Spotify_Clone
             AnsiConsole.Write(table);
         }
 
+        // Removes song from selected playlist
         public void RemoveFromPlaylist(int id)
         {
             if (id < activeUser.Person.Playlists[SelectedId].Playables.Count)
@@ -339,6 +352,7 @@ namespace Spotify_Clone
             }
         }
 
+        // Removes the selected playlist
         public void RemovePlaylist()
         {
             Console.SetCursorPosition(5, 10);
@@ -347,6 +361,7 @@ namespace Spotify_Clone
             activeUser.RemovePlayList(SelectedId);
         }
 
+        // Shows all friends from the active user
         public void ShowFriends()
         {
             int counter = 0;
@@ -367,6 +382,7 @@ namespace Spotify_Clone
             AnsiConsole.Write(table);
         }
 
+        // Selects friend from allUsers with id
         public void SelectFriend(int id)
         {
             if (id < activeUser.Person.Friends.Count)
@@ -383,6 +399,7 @@ namespace Spotify_Clone
             }
         }
 
+        // Adds selected user to active user's friends list
         public void AddFriend(int id)
         {
             if (id < activeUser.Person.Friends.Count)
@@ -407,6 +424,7 @@ namespace Spotify_Clone
             }
         }
 
+        // Removes selected friend from active user's friends list
         public void RemoveFriend(int id)
         {
             if (id < activeUser.Person.Friends.Count)

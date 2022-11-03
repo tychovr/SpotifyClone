@@ -17,11 +17,13 @@ namespace Spotify_Clone
             Title = title;
         }
 
+        // Adds IPlayable to the playlist
         public void Add(IPlayable playable)
         {
             Playables.Add(playable);
         }
 
+        // Removes IPlayable from the playlist
         public void Remove(IPlayable playable)
         {
             Playables.Remove(playable);
