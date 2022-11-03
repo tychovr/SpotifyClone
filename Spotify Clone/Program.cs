@@ -505,6 +505,7 @@ namespace Spotify_Clone
             Environment.Exit(0);
         }
 
+        // End of program test
         // Explains every test in a cool and fast effect
         public static void TypeWriter(string text)
         {
@@ -519,6 +520,7 @@ namespace Spotify_Clone
             Console.CursorTop = Console.CursorTop + 3;
         }
 
+        // Shows the actions
         public static void TypeWriter2(string text)
         {
             for (int i = 0; i < text.Length; i++)
