@@ -353,10 +353,26 @@ namespace Spotify_Clone
 
         public void AddFriend(int id)
         {
-            activeUser.AddFriend(allUsers[id]);
+            if (id < activeUser.Friends.Count)
+            {
+                if (activeUser.Friends.Find(x => x.Name == allUsers[id].Name) == null)
+                {
+                    activeUser.AddFriend(allUsers[id]);
 
-            Console.SetCursorPosition(5, 10);
-            Program.TypeWriter2("Added " + allUsers[id].Name + " as a friend!");
+                    Console.SetCursorPosition(5, 10);
+                    Program.TypeWriter2("Added " + allUsers[id].Name + " as a friend!");
+                }
+                else
+                {
+                    Console.SetCursorPosition(5, 10);
+                    Program.TypeWriter2("You are already friends with " + allUsers[id].Name + "!");
+                }
+            }
+            else
+            {
+                Console.SetCursorPosition(5, 10);
+                Program.TypeWriter2("There is no user with that ID!");
+            }
         }
 
         public void RemoveFriend(int id)
