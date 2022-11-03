@@ -11,24 +11,24 @@ namespace Spotify_Clone
         private string title;
         private List<Artist> artists = new List<Artist>();
         private Genre songGenre;
-        private int length;
+        private int duration;
 
         public string Title { get { return title; } set { title = value; } }
         public List<Artist> Artists { get { return artists; } set { artists = value; } }
         public Genre SongGenre { get { return songGenre; } set { songGenre = value; } }
-        int IPlayable.Length => length;
+        public int Duration { get { return duration; } set { duration = value; } }
 
         public Song(string title, List<Artist> artist, Genre genre, int songID, int duration)
         {
             Title = title;
             Artists = artist;
             SongGenre = genre;
-            length = duration;
+            Duration = duration;
         }
 
         public int Length()
         {
-            return length;
+            return Duration;
         }
 
         public void Next()
