@@ -318,7 +318,7 @@ namespace Spotify_Clone
             Console.Clear();
 
             TypeWriter("Client.cs - Play() | Album");
-            client.allAlbums[0].Play();
+            allAlbums[1].Play();
             Thread.Sleep(5000);
             Console.Clear();
 
