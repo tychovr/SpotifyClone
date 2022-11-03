@@ -12,6 +12,6 @@ namespace Spotify_Clone
         void Pause();
         void Next();
         void Stop();
-        int Length();
+        int Length { get; }
     }
 }
