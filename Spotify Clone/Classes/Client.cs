@@ -246,6 +246,9 @@ namespace Spotify_Clone
         public void SelectPlaylist(int id)
         {
             SelectedId = id;
+
+            Console.SetCursorPosition(5, 10);
+            Program.TypeWriter2("Selected playlist: " + activeUser.Playlists[id].Title);
         }
 
         public void RemovePlaylists(int id)
