@@ -36,9 +36,9 @@ namespace Spotify_Clone
             Play();
         }
 
-        public void Pause()
+        public string Pause()
         {
-            Console.WriteLine("Pausing: " + Title);
+            return "Paused: " + Title;
         }
 
         public string Play()
