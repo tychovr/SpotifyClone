@@ -238,7 +238,7 @@ namespace Spotify_Clone
             TestCode(client, SuperUser, allAlbums, allSongs, allUsers);
         }
 
-        public static void TestCode(Client client, SuperUser SuperUser, List<Album> AllAlbums, List<Song> AllSongs, List<Person> AllUsers)
+        public static void TestCode(Client client, SuperUser SuperUser, List<Album> allAlbums, List<Song> allSongs, List<Person> allUsers)
         {
             // Loading test animation
             AnsiConsole.Progress()
