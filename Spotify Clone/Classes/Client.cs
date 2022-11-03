@@ -165,21 +165,6 @@ namespace Spotify_Clone
 
                 AnsiConsole.Write(Table2);
             }
-            int Counter = 0;
-
-            var Table = new Table().Centered();
-
-            Table.Title("[#0c0c0c].[/]");
-            Table.Border(TableBorder.HeavyEdge);
-            Table.AddColumns("[#FF0000]ID[/]", "[#FF7F00]Name[/]", "[#FFFF00]Songs[/]");
-
-            foreach (var playlist in ActiveUser.Person.Playlists)
-            {
-                Table.AddRow("[#FF0000]" + Counter.ToString() + "[/]", "[#FF7F00]" + playlist.Title + "[/]", "[#FFFF00]" + playlist.Playables.Count() + "[/]");
-                Counter++;
-            }
-
-            AnsiConsole.Write(Table);
         }
 
         public void SelectUserPlaylist(int id)
