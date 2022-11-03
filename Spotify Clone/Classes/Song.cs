@@ -38,6 +38,7 @@ namespace Spotify_Clone
 
         public void Pause()
         {
+            Console.SetCursorPosition(5, 10);
             Program.TypeWriter2("Pausing: " + Title);
         }
 
