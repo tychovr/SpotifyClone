@@ -44,7 +44,7 @@ namespace Spotify_Clone
         public void CreatePlayList(string name)
         {
             Playlist playlist = new Playlist(this, name);
-            Playlists.Add(playlist);
+            Person.Playlists.Add(playlist);
         }
 
         public void RemovePlayList(int id)
