@@ -38,7 +38,7 @@ namespace Spotify_Clone
 
         public void RemoveFriend(Person person)
         {
-            Friends.Remove(person);
+            Person.Friends.Remove(person);
         }
 
         public void CreatePlayList(string name)
