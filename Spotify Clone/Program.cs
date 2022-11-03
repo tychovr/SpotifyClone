@@ -406,6 +406,11 @@ namespace Spotify_Clone
             client.ShowSongsInPlaylist();
             Thread.Sleep(1);
             Console.Clear();
+
+            TypeWriter("Client.cs - RemovePlaylist() | Showcase");
+            client.RemovePlaylist();
+            Thread.Sleep(1);
+            Console.Clear();
         }
 
         // Explains every test in a cool and fast effect
